@@ -2,7 +2,7 @@ import React from 'react'
 
 const ContactForm = () => {
   return (
-    <div className="grid max-w-screen-xl grid-cols-1 gap-8 px-8 py-16 mx-auto rounded-lg md:grid-cols-2 md:px-12 lg:px-16 xl:px-32  text-gray-800">
+    <div className=" grid max-w-screen-xl grid-cols-1 gap-8 px-8 py-16 mx-auto rounded-lg md:grid-cols-2 md:px-12 lg:px-16 xl:px-32  text-gray-800">
 				<div className="flex flex-col justify-between">
 					<div className="space-y-2">
 						<h2 className="text-4xl font-bold leading lg:text-5xl">Let's talk!</h2>
@@ -13,12 +13,12 @@ const ContactForm = () => {
 				</div>
 				<form novalidate="" className="space-y-6">
 					<div>
-						<label for="name" className="text-sm">Full name</label>
+						<label for="name" className="text-sm">Your name</label>
 						<input id="name" type="text" placeholder="" className="w-full p-3 rounded bg-gray-100" />
 					</div>
 					<div>
-						<label for="email" className="text-sm">Email</label>
-						<input id="email" type="email" className="w-full p-3 rounded bg-gray-100" />
+						<label for="email" className="text-sm">Phone Number</label>
+						<input id="email" type="number" className="w-full p-3 rounded bg-gray-100" />
 					</div>
 					<div>
 						<label for="message" className="text-sm">Message</label>
