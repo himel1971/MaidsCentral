@@ -10,6 +10,8 @@ import './index.css'
 import Layout from './assets/Layout/Layout.jsx';
 import Home from './assets/Pages/Home.jsx';
 import AuthProvider from './assets/Config/AuthProvider.jsx';
+import Contact from './assets/Pages/Contact.jsx';
+import FindMaids from './assets/Pages/FindMaids.jsx';
 
 
 
@@ -23,7 +25,37 @@ const router = createBrowserRouter([
         {
           path: "/",
           element: <Home></Home>
+        },
+        {
+          path: "/contact",
+          element: <Contact></Contact>
+        },
+        {
+          path: "/about",
+          element: <h1>About Us</h1>
+        },
+        {
+          path: "/findmaids",
+          element: <FindMaids></FindMaids>
+        },
+        {
+          path: "/login",
+          element: <h1>Login</h1>
+
+        },
+        {
+          path: "/register",
+          element: <h1>Register</h1>
         }
+
+
+
+
+
+
+
+
+
       ]
   },
 ]);

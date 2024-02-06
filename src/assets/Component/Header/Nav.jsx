@@ -22,7 +22,7 @@ const Nav = () => {
 
     return (
         <>
-            <div className="navbar pt-6 container mx-auto bg-base-100 h-[10vh] justify-between flex">
+            <div className="navbar font-rubik text-sm pt-6 container mx-auto bg-base-100 h-[10vh] justify-between flex">
                 <div className="flex justify-between">
 
                     <div className="dropdown">
@@ -49,12 +49,12 @@ const Nav = () => {
 
                         </ul>
                     </div>
-                    <img src="https://i.ibb.co/P5vDFxM/restura-Logo.png" alt="Logo" className='w-72' border="0"></img>
+                    <img src="https://i.ibb.co/FwFFpKN/reallogo.jpg" alt="MaidsCentral" className='w-72' border="0"></img>
 
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <div className="text-black text-lg not-italic font-normal z-10">
-                        <ul className="flex text-lg font-medium pb-3 justify-between items-center space-x-11">
+                        <ul className="flex text-lg uppercase font-rubik font-medium pb-3 justify-between items-center space-x-11">
                             <NavLinks></NavLinks>
                         </ul>
                     </div>
@@ -67,10 +67,12 @@ const Nav = () => {
 
 
                     {!user ?
-                        <>
-                            <NavLink to="/login" className="btn rounded-md hover:bg-[#E67700] hidden md:flex bg-[#E67700] px-5 py-2.5 text-sm font-medium text-white shadow">Log In</NavLink>
+                        <div className='gap-3 flex'>
+                            <NavLink to="/login" className=" hover:text-[#7CC23E] hidden text-lg md:flex  px-9 py-2.5  font-medium text-black uppercase ">Log In</NavLink>
+                            
+                             <NavLink to="/register" className="btn rounded-md hover:bg-[#E67700] hidden md:flex  px-8 bg-[#7CC23E] py-2.5 text-sm font-medium text-white shadow">Register</NavLink>
 
-                        </>
+                        </div>
                         :
                         <div className="dropdown dropdown-end">
                             <label tabIndex={0} className="btn btn-lg btn-ghost btn-circle avatar">

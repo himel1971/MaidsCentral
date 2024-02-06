@@ -12,7 +12,7 @@ const NavLinks = () => {
         <NavLink
           to="/"
           className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "text-[#E67700]" : ""
+            isPending ? "pending" : isActive ? "text-[#813f20]" : ""
           }
         >
           Home
@@ -20,39 +20,42 @@ const NavLinks = () => {
       </li>
 
 
-      {user && (
-        <>
+      {/* {user && (
+        
+      )} */}
+      <>
           <li key="about">
             <NavLink
-              to="/blog"
+              to="/about"
               className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "text-[#E67700]" : ""
+                isPending ? "pending" : isActive ? "text-[#813f20]" : ""
               }
             >
-             Blog
+             About
             </NavLink>
           </li>
           <li>
         <NavLink
-          to="/add"
+          to="/findmaids"
           className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "text-[#E67700]" : ""
+            isPending ? "pending" : isActive ? "text-[#813f20]" : ""
           }
         >
-          Add Product
+          Find Maids
         </NavLink>
       </li>
-        </>
-      )}
 
+
+
+        </>
       <li>
         <NavLink
-          to="allfoods"
+          to="contact"
           className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "text-[#E67700]" : ""
+            isPending ? "pending" : isActive ? "text-[#813f20]" : ""
           }
         >
-        All Foods
+       Contact
         </NavLink>
       </li>
 
@@ -60,10 +63,18 @@ const NavLinks = () => {
         <NavLink
           to="/login"
           className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "text-[#E67700]" : ""
+            isPending ? "pending" : isActive ? "text-[#813f20]" : ""
           }
         >
           Login
+        </NavLink>
+        <NavLink
+          to="/registration"
+          className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "text-[#813f20]" : ""
+          }
+        >
+         Registration
         </NavLink>
       </li>
     </>
