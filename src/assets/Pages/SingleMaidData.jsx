@@ -7,7 +7,7 @@ const SingleMaidData = () => {
     const { id } = useParams();
     const allMaids = useLoaderData();
     const maid = allMaids.find(maid => maid.id === parseInt(id));
-    const { name, date_of_birth, height, weight, experience_years } = maid;
+    const { name, date_of_birth, height, weight, experience_years, picture_url } = maid;
     // console.log(id);
     // console.log(allMaids);
     // console.log(maid);
@@ -15,13 +15,19 @@ const SingleMaidData = () => {
     return (
         <section className='container mx-auto my-16'>
             <div>
-                <h1>{name}</h1>
+                <h1 className='font-bold text-4xl'>{name}</h1>
+               
+                <div className="avatar">
+                    <div className="w-40 mask mask-squircle">
+                    <img src={picture_url} alt="" />
+                    </div>
+                </div>
 
                 <Tabs>
-                    <TabList>
-                        <Tab>Title 1</Tab>
-                        <Tab>Title 2</Tab>
-                        <Tab>Title 3</Tab>
+                    <TabList >
+                        <Tab>Personal Information</Tab>
+                        <Tab>Experience</Tab>
+                        <Tab>Dietary Restrictions</Tab>
                     </TabList>
 
                     <TabPanel>
