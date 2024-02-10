@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
 import {
   createBrowserRouter,
   RouterProvider,
@@ -12,6 +11,9 @@ import Home from './assets/Pages/Home.jsx';
 import AuthProvider from './assets/Config/AuthProvider.jsx';
 import Contact from './assets/Pages/Contact.jsx';
 import FindMaids from './assets/Pages/FindMaids.jsx';
+import SingleMaidData from './assets/Pages/SingleMaidData.jsx';
+import Error from './assets/Pages/Error.jsx';
+
 
 
 
@@ -20,6 +22,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout></Layout>,
+    errorElement: <Error></Error>  ,
     children:
       [
         {
@@ -48,6 +51,12 @@ const router = createBrowserRouter([
         {
           path: "/register",
           element: <h1>Register</h1>
+        },
+        {
+          path: "/maid/:id",
+          element : <SingleMaidData></SingleMaidData> ,
+          loader :  ()=>fetch('maids.JSON')
+
         }
 
 
@@ -61,7 +70,6 @@ const router = createBrowserRouter([
       ]
   },
 ]);
-
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
