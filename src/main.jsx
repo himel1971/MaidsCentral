@@ -36,7 +36,9 @@ const router = createBrowserRouter([
         },
         {
           path: "/findmaids",
-          element: <FindMaids></FindMaids>
+          element: <FindMaids></FindMaids>,
+          loader :  ()=>fetch('maids.JSON')
+
         },
         {
           path: "/login",
