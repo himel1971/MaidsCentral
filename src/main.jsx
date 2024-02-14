@@ -40,7 +40,7 @@ const router = createBrowserRouter([
         {
           path: "/findmaids",
           element: <FindMaids></FindMaids>,
-          loader :  ()=>fetch('maids.JSON')
+          loader :  ()=>fetch('http://localhost:5000/maids')
 
         },
         {
@@ -55,7 +55,7 @@ const router = createBrowserRouter([
         {
           path: "/maid/:id",
           element : <SingleMaidData></SingleMaidData> ,
-          loader :  ()=>fetch('maids.JSON')
+          loader :  ()=>fetch('http://localhost:5000/maids')
 
         }
 

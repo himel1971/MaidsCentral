@@ -1,6 +1,6 @@
 [
     {
-      "id": 1,
+
       "name": "Mary Smith",
       "date_of_birth": "1989-05-15",
       "nationality": "American",
@@ -16,7 +16,7 @@
       "languages": ["English", "Spanish"]
     },
     {
-      "id": 2,
+
       "name": "John Doe",
       "date_of_birth": "1996-10-20",
       "nationality": "British",
@@ -32,7 +32,7 @@
       "languages": ["English"]
     },
     {
-      "id": 3,
+
       "name": "Anna Garcia",
       "date_of_birth": "1992-03-28",
       "nationality": "Mexican",
@@ -48,7 +48,7 @@
       "languages": ["English", "Spanish"]
     },
     {
-      "id": 4,
+
       "name": "David Kim",
       "date_of_birth": "1985-08-10",
       "nationality": "South Korean",
@@ -64,7 +64,7 @@
       "languages": ["Korean", "English"]
     },
     {
-      "id": 5,
+
       "name": "Emily Chen",
       "date_of_birth": "1990-12-05",
       "nationality": "Chinese",

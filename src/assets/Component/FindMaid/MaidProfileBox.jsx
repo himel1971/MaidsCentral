@@ -5,13 +5,13 @@ import BoxTableData from './BoxTableData';
 const MaidProfileBox = ({ maid }) => {
 
 
-    const { id, picture_url, name, nationality } = maid;
+    const { _id, picture_url, name, nationality } = maid;
 
 
 
     return (
         <>
-            <Link to={`/maid/${id}`}>
+            <Link to={`/maid/${_id}`}>
                 <div className="flex flex-col justify-center max-w-xs p-6 shadow-md rounded-xl sm:px-12 bg-gray-50 text-gray-800">
 
                     <img src={picture_url} alt="" className="w-32 h-32 mx-auto rounded-full bg-gray-500 aspect-square" />

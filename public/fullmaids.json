@@ -1,0 +1,217 @@
+[
+    {
+        "id": 1,
+        "name": "Mary Smith",
+        "date_of_birth": "1989-05-15",
+        "place_of_birth": "New York, USA",
+        "nationality": "American",
+        "education": "High School Diploma",
+        "experience_years": 5,
+        "height": "5'6\"",
+        "weight": "140 lbs",
+        "picture_url": "https://i.ibb.co/hX05dCp/2.jpg",
+        "marital_status": "Single",
+        "religion": "Christian",
+        "rest_day_preference": "Saturday",
+        "skills": [
+            "cleaning",
+            "cooking",
+            "laundry"
+        ],
+        "languages": [
+            "English",
+            "Spanish"
+        ],
+        "home_address": "123 Main Street, Anytown, USA",
+        "number_of_children": 0,
+        "age_of_children": [],
+        "experience": [
+            {
+                "Country": "Housekeeper",
+                "employer": "ABC Cleaning Services",
+                "duration": "2017-2020",
+                "responsibilities": "Responsible for cleaning and maintaining household cleanliness."
+            },
+            {
+                "Country": "Cook",
+                "employer": "XYZ Restaurant",
+                "duration": "2015-2017",
+                "responsibilities": "Prepared and cooked meals following recipes and food safety guidelines."
+            }
+        ]
+    },
+      
+      {
+        "id": 2,
+        "name": "John Doe",
+        "date_of_birth": "1996-10-20",
+        "place_of_birth": "London, UK",
+        "nationality": "British",
+        "education": "Bachelor's Degree in Hospitality",
+        "experience_years": 3,
+        "height": "5'9\"",
+        "weight": "160 lbs",
+        "picture_url": "https://i.ibb.co/hX05dCp/2.jpg",
+        "marital_status": "Married",
+        "religion": "None",
+        "rest_day_preference": "Sunday",
+        "skills": [
+            "cleaning",
+            "gardening"
+        ],
+        "languages": [
+            "English"
+        ],
+        "home_address": "456 Elm Street, Anycity, UK",
+        "number_of_children": 2,
+        "age_of_children": [
+            4,
+            6
+        ],
+        "experience": [
+            {
+                "Country": "Gardener",
+                "employer": "Green Thumb Landscaping",
+                "duration": "2019-2022",
+                "responsibilities": "Maintained gardens, lawns, and outdoor landscapes."
+            },
+            {
+                "Country": "Cleaner",
+                "employer": "Spotless Cleaning Services",
+                "duration": "2017-2019",
+                "responsibilities": "Performed general cleaning duties in residential and commercial settings."
+            }
+        ]
+    },
+      
+      {
+        "id": 3,
+        "name": "Anna Garcia",
+        "date_of_birth": "1992-03-28",
+        "place_of_birth": "Mexico City, Mexico",
+        "nationality": "Mexican",
+        "education": "Diploma in Hotel Management",
+        "experience_years": 7,
+        "height": "5'4\"",
+        "weight": "150 lbs",
+        "picture_url": "https://i.ibb.co/hX05dCp/2.jpg",
+        "marital_status": "Divorced",
+        "religion": "Catholic",
+        "rest_day_preference": "Sunday",
+        "skills": [
+            "cleaning",
+            "babysitting",
+            "cooking"
+        ],
+        "languages": [
+            "English",
+            "Spanish"
+        ],
+        "home_address": "789 Oak Avenue, Anycity, Mexico",
+        "number_of_children": 1,
+        "age_of_children": [
+            8
+        ],
+        "experience": [
+            {
+                "Country": "Singapore",
+                "employer": "Johnson Family",
+                "duration": "2018-2022",
+                "responsibilities": "Provided childcare, organized activities, and assisted with household chores."
+            },
+            {
+                "Country": "Japan",
+                "employer": "Clean & Shine Services",
+                "duration": "2016-2018",
+                "responsibilities": "Performed housekeeping tasks including cleaning, laundry, and meal preparation."
+            }
+        ]
+    },
+      
+      {
+        "id": 4,
+        "name": "David Kim",
+        "date_of_birth": "1985-08-10",
+        "place_of_birth": "Seoul, South Korea",
+        "nationality": "South Korean",
+        "education": "High School Diploma",
+        "experience_years": 10,
+        "height": "5'10\"",
+        "weight": "170 lbs",
+        "picture_url": "https://i.ibb.co/hX05dCp/2.jpg",
+        "marital_status": "Married",
+        "religion": "Buddhist",
+        "rest_day_preference": "Saturday",
+        "skills": [
+            "cleaning",
+            "gardening",
+            "handyman"
+        ],
+        "languages": [
+            "Korean",
+            "English"
+        ],
+        "home_address": "987 Pine Lane, Anycity, South Korea",
+        "number_of_children": 3,
+        "age_of_children": [
+            3,
+            6,
+            10
+        ],
+        "experience": [
+            {
+                "Country": "Gardener",
+                "employer": "Nature's Finest Landscaping",
+                "duration": "2016-2022",
+                "responsibilities": "Managed garden maintenance and landscaping projects."
+            },
+            {
+                "Country": "Handyman",
+                "employer": "Fix It All Repairs",
+                "duration": "2012-2016",
+                "responsibilities": "Performed repairs and maintenance tasks for residential properties."
+            }
+        ]
+    },
+      
+      {
+        "id": 5,
+        "name": "Emily Chen",
+        "date_of_birth": "1990-12-05",
+        "place_of_birth": "Shanghai, China",
+        "nationality": "Chinese",
+        "education": "Bachelor's Degree in Business Administration",
+        "experience_years": 6,
+        "height": "5'5\"",
+        "weight": "130 lbs",
+        "picture_url": "https://i.ibb.co/hX05dCp/2.jpg",
+        "marital_status": "Single",
+        "religion": "Taoism",
+        "rest_day_preference": "Friday",
+        "skills": [
+            "cleaning",
+            "cooking"
+        ],
+        "languages": [
+            "Mandarin",
+            "English"
+        ],
+        "home_address": "654 Maple Drive, Anycity, China",
+        "number_of_children": 0,
+        "age_of_children": [],
+        "experience": [
+            {
+                "Country": "Sales Associate",
+                "employer": "Fashion Trends Boutique",
+                "duration": "2018-2022",
+                "responsibilities": "Assisted customers, managed inventory, and processed transactions."
+            },
+            {
+                "Country": "Assistant Manager",
+                "employer": "Sunrise Supermarket",
+                "duration": "2014-2018",
+                "responsibilities": "Supervised staff, managed store operations, and ensured customer satisfaction."
+            }
+        ]
+    }
+]

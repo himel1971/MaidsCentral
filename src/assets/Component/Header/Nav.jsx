@@ -93,7 +93,7 @@ const Nav = () => {
                     }
 
                 </div>
-            </div>
+            </div> <hr />
         </>
     )
 }

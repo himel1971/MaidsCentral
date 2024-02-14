@@ -16,7 +16,7 @@ const FindMaids = () => {
       <section className='grid grid-cols-4 gap-4'>
 
         {
-          maids.map(maid => <MaidProfileBox key={maid.id} maid={maid}></MaidProfileBox>)
+          maids.map(maid => <MaidProfileBox key={maid._id} maid={maid}></MaidProfileBox>)
         }
 
       </section>
