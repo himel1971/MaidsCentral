@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
-import MaidProfileBox from '../Component/FindMaid/MaidProfileBox';
+import FilterButtons from '../Component/Filter & pagination/FilterButtons';
+import MaidList from '../Component/Filter & pagination/MaidList';
+import Pagination from '../Component/Filter & pagination/Pagination';
 
 const FindMaids = () => {
   const maids = useLoaderData();
@@ -19,9 +21,13 @@ const FindMaids = () => {
     skills: []
   });
 
+
+  console.log(filters);
+
+
   // State to store pagination
   const [currentPage, setCurrentPage] = useState(1);
-  const [maidsPerPage] = useState(4); // Change the number of maids per page as needed
+  const [maidsPerPage] = useState(8); // Change the number of maids per page as needed
 
   // Filter function
   const filterMaids = (maid) => {
@@ -76,82 +82,47 @@ const FindMaids = () => {
 
   return (
     <div className='container mx-auto my-20'>
-      <h1 className='text-center text-xl m-8'>All Maids</h1>
+      {/* Your existing JSX code for the header */}
 
       {/* Filter buttons */}
-      <div className="flex justify-around mb-8">
-        <div className="flex items-center gap-4">
-          <span className="text-[#0E3997] font-bold">Marital Status:</span>
-          {maritalStatuses.map(status => (
-            <button key={status} className={`btn btn-xs sm:btn-sm md:btn-md lg:btn-mg ${filters.maritalStatus === status ? 'bg-gray-200' : ''}`} onClick={() => setFilters({ ...filters, maritalStatus: status })}>
-              {status}
-            </button>
-          ))}
+      <div className=" flex flex-col space-y-5 mb-8">
+        {/* Marital Status filter */}
+        <div className='flex items-center space-x-5'>
+          <h1>Marital Status:</h1>
+          <FilterButtons options={maritalStatuses} selectedOption={filters.maritalStatus} onSelect={status => setFilters({ ...filters, maritalStatus: status })} />
         </div>
 
-        <div className="flex items-center gap-4">
-          <span className="text-[#0E3997] font-bold">Age:</span>
-          {ages.map(age => (
-            <button key={age} className={`btn btn-xs sm:btn-sm md:btn-md lg:btn-mg ${filters.ageRange && filters.ageRange.min === age ? 'bg-gray-200' : ''}`} onClick={() => setFilters({ ...filters, ageRange: { min: age, max: age + 9 } })}>
-              {`${age} - ${age + 9}`}
-            </button>
-          ))}
+        {/* Age filter */}
+        <div className='flex items-center  space-x-5'>
+          <h1>Age:</h1>
+          <FilterButtons options={ages.map(age => `${age} - ${age + 9}`)} selectedOption={filters.ageRange ? `${filters.ageRange.min} - ${filters.ageRange.max}` : null} onSelect={ageRange => setFilters({ ...filters, ageRange: { min: parseInt(ageRange), max: parseInt(ageRange.split(' - ')[1]) } })} />
         </div>
-
-        <div className="flex items-center gap-4">
-          <span className="text-[#0E3997] font-bold">Religion:</span>
-          {religions.map(religion => (
-            <button key={religion} className={`btn btn-xs sm:btn-sm md:btn-md lg:btn-mg ${filters.religion === religion ? 'bg-gray-200' : ''}`} onClick={() => setFilters({ ...filters, religion: religion })}>
-              {religion}
-            </button>
-          ))}
+        {/* Religion filter */}
+        <div className='flex items-center space-x-5 '>
+          <h1>Religion:</h1>
+          <FilterButtons options={religions} selectedOption={filters.religion} onSelect={religion => setFilters({ ...filters, religion: religion })} />
         </div>
+        {/* Skills filter */}
+        <div className='flex items-center space-x-5 '>
+          <h1>Skill:</h1>
+          <FilterButtons options={skills} selectedOption={null} onSelect={skill => setFilters({ ...filters, skills: filters.skills.includes(skill) ? filters.skills.filter(s => s !== skill) : [...filters.skills, skill] })} />
 
-        <div className="flex items-center gap-4">
-          <span className="text-[#0E3997] font-bold">Skills:</span>
-          {skills.map(skill => (
-            <button key={skill} className={`btn btn-xs sm:btn-sm md:btn-md lg:btn-mg ${filters.skills.includes(skill) ? 'bg-gray-200' : ''}`} onClick={() => setFilters({ ...filters, skills: filters.skills.includes(skill) ? filters.skills.filter(s => s !== skill) : [...filters.skills, skill] })}>
-              {skill}
-            </button>
-          ))}
         </div>
-
+        {/* Reset Filters button */}
         <div className="flex items-center">
           <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-mg" onClick={resetFilters}>Reset Filters</button>
         </div>
       </div>
 
-      <hr />
+<hr />
 
-      <hr /> <br />
-      <section className='grid grid-cols-4 gap-4'>
-        {currentMaids.length > 0 ? (
-          currentMaids.map(maid => <MaidProfileBox key={maid._id} maid={maid}></MaidProfileBox>)
-        ) : (
-          <div className="text-center text-gray-500 mt-8">
-            {maids.length === 0 ? "Loading..." : "No maids found."}
-          </div>
-        )}
-      </section>
+      {/* Display maid profiles */}
+      <div className=' my-12'>
+        <MaidList maids={currentMaids} />
+      </div>
 
       {/* Pagination */}
-      <nav className='flex justify-center space-x-4 mt-4'>
-        <ul className='flex'>
-          <li>
-            <button onClick={prevPage} className={`btn mr-2 btn-xs sm:btn-sm md:btn-md lg:btn-mg`} disabled={currentPage === 1}>Previous</button>
-          </li>
-          {Array.from({ length: Math.ceil(filteredMaids.length / maidsPerPage) }, (_, index) => (
-            <li key={index}>
-              <button onClick={() => paginate(index + 1)} className={`btn btn-xs sm:btn-sm md:btn-md lg:btn-mg ${currentPage === index + 1 ? 'bg-gray-200' : ''}`}>
-                {index + 1}
-              </button>
-            </li>
-          ))}
-          <li>
-            <button onClick={nextPage} className={`btn ml-2 btn-xs sm:btn-sm md:btn-md lg:btn-mg`} disabled={currentPage === Math.ceil(filteredMaids.length / maidsPerPage)}>Next</button>
-          </li>
-        </ul>
-      </nav>
+      <Pagination currentPage={currentPage} totalPages={Math.ceil(filteredMaids.length / maidsPerPage)} onPageChange={setCurrentPage} />
     </div>
   );
 };

@@ -84,9 +84,9 @@ const Nav = () => {
                                 <li className='select-none uppercase'>{displayName || "Unknown"} </li>
                                 <li className='select-none italic '>{email}</li>
                                 <hr />
-                                <li> <Link className='capitalize' to={`/add`}>Add a food</Link></li>
-                                <li> <Link className='capitalize' to={`/yourfoods`}>Your foods</Link></li>
-                                <li> <Link className='capitalize' to={`/myorder`}>My Orders</Link></li>
+                                <li> <Link className='capitalize' to={`/findmaids`}>Find a Maid</Link></li>
+                                <li> <Link className='capitalize' to={`/contact`}>Contact Us</Link></li>
+                                <li> <a className='capitalize' target='_blank' href='https://wa.me/message/OTPYQ2VQURDEC1'>Chat With Us</a></li>
                                 <li><Link className='hover:bg-red-400 text-base font-medium' onClick={logOut}>Logout</Link></li>
                             </ul>
                         </div>

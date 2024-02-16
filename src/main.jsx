@@ -13,6 +13,8 @@ import Contact from './assets/Pages/Contact.jsx';
 import FindMaids from './assets/Pages/FindMaids.jsx';
 import SingleMaidData from './assets/Pages/SingleMaidData.jsx';
 import Error from './assets/Pages/Error.jsx';
+import SignIn from './assets/Pages/Login.jsx';
+import Registration from './assets/Pages/Registration.jsx';
 
 
 
@@ -45,12 +47,12 @@ const router = createBrowserRouter([
         },
         {
           path: "/login",
-          element: <h1>Login</h1>
+          element: <SignIn></SignIn>
 
         },
         {
           path: "/register",
-          element: <h1>Register</h1>
+          element: <Registration></Registration>
         },
         {
           path: "/maid/:id",
@@ -72,10 +74,12 @@ const router = createBrowserRouter([
 ]);
 
 
+
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <AuthProvider>
-      <RouterProvider router={router} />
-    </AuthProvider>
-  </React.StrictMode>,
+  
+  <AuthProvider>
+    <RouterProvider router={router} />
+  </AuthProvider>
+
 )
+

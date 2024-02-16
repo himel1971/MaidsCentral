@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
+import { AuthContext } from '../../Config/AuthProvider';
 
 const BookForm = ({ data }) => {
-    console.log(data);
+    const { user } = useContext(AuthContext);
+    const { displayName, email, photoURL } = user || {};
 
     const { name } = data;
 
@@ -52,6 +54,7 @@ const BookForm = ({ data }) => {
                                 name='name'
                                 className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
                                 placeholder="Your Name"
+                                defaultValue={displayName}
                             />
                         </div>
 
@@ -61,11 +64,12 @@ const BookForm = ({ data }) => {
                                 name='email'
                                 className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
                                 placeholder="Enter email"
+                                defaultValue={email}
                             />
                         </div>
                         <div className="relative">
                             <input
-                                type="number"
+                                type="tel"
                                 name='phone'
                                 className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
                                 placeholder="Enter Your mobile number"
