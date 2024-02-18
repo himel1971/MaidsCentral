@@ -22,7 +22,7 @@ const Nav = () => {
 
     return (
         <>
-            <div className="navbar z-10  font-rubik text-sm pt-6 container mx-auto bg-base-100 h-[10vh] justify-between flex">
+            <div className="navbar z-10  font-rubik text-sm pt-6 container mx-auto bg-base-100 h-[8vh] justify-between flex">
                 <div className="flex justify-between">
 
                     <div className="dropdown">

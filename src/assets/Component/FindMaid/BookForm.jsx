@@ -18,7 +18,7 @@ const BookForm = ({ data }) => {
         const message = form.message.value;
 
         // Construct WhatsApp message with data
-        const whatsappMessage = `Hi I'm ${name}.My email is${email}. My Phone number${phone}. ${message}`;
+        const whatsappMessage = `Hi I'm ${name}.My email is ${email}. My Phone number ${phone}. ${message}`;
 
         // Phone number to send the message to
         const phoneNumber = '+6589114308';

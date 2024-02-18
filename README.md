@@ -4,5 +4,11 @@ This template provides a minimal setup to get React working in Vite with HMR and
 
 Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+  {/* <div className="hero-overlay bg-white bg-opacity-30"></div> */}
+
+
+   {/* <div className="max-w-xl flex flex-col justify-center items-center text-center">
+                        <h1 className="mb-5 text-5xl text-[#6D3419] font-bold">Need a Maid at Home?</h1>
+                        <p className="mb-5 max-w-sm text-[#616160]">Introducing Maids Central, Singapore's premier online platform connecting employers with trusted helper agencies. Elevate your maid hiring experience with us.</p>
+                        <button className="btn bg-[#88BC3D] text-white font-rubik text-base font-medium uppercase w-2/3 rounded-md ">Schedule an appointment</button>
+                    </div> */}

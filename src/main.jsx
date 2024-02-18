@@ -15,6 +15,7 @@ import SingleMaidData from './assets/Pages/SingleMaidData.jsx';
 import Error from './assets/Pages/Error.jsx';
 import SignIn from './assets/Pages/Login.jsx';
 import Registration from './assets/Pages/Registration.jsx';
+import About from './assets/Pages/About.jsx';
 
 
 
@@ -37,7 +38,7 @@ const router = createBrowserRouter([
         },
         {
           path: "/about",
-          element: <h1>About Us</h1>
+          element: <About></About>
         },
         {
           path: "/findmaids",

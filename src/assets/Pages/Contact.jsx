@@ -4,12 +4,14 @@ import MapBox from '../Component/Contact/MapBox'
 
 const Contact = () => {
 	return (
-		<>
+		<div className='font-rubik'>
 			<MapBox></MapBox>
 			<ContactForm></ContactForm>
 
-		</>
+		</div>
 	)
 }
 
 export default Contact
+
+

@@ -1,15 +1,23 @@
 import React from 'react'
 import Hero from '../Component/Home/Hero'
-import Hero3 from '../Component/Home/Hero3'
+
+import Faq from '../Component/Home/Faq'
+import Features from '../Component/Home/Features'
+import Extra from '../Component/Home/Extra'
+import Testimonial from '../Component/Home/Testimonial'
+import Stats from '../Component/Home/Stats'
 
 
 const Home = () => {
   return (
-    <>
+    <section className='font-rubik'>
       <Hero></Hero>
-    {/* <Hero3></Hero3> */}
-
-    </>
+      {/* <Features></Features> */}
+      <Extra></Extra>
+      <Stats></Stats>
+      <Testimonial></Testimonial>
+      <Faq></Faq>
+    </section>
   )
 }
 
