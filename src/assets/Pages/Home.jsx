@@ -6,6 +6,7 @@ import Features from '../Component/Home/Features'
 import Extra from '../Component/Home/Extra'
 import Testimonial from '../Component/Home/Testimonial'
 import Stats from '../Component/Home/Stats'
+import BlogSection from '../Component/Home/Blog/BlogSection'
 
 
 const Home = () => {
@@ -14,8 +15,9 @@ const Home = () => {
       <Hero></Hero>
       {/* <Features></Features> */}
       <Extra></Extra>
+      <BlogSection></BlogSection>
       <Stats></Stats>
-      <Testimonial></Testimonial>
+      {/* <Testimonial></Testimonial> */}
       <Faq></Faq>
     </section>
   )

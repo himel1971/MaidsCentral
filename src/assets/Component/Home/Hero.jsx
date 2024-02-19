@@ -30,7 +30,7 @@ const Hero = () => {
                         <div className="mt-8 flex flex-wrap gap-4 justify-center text-center">
                             <NavLink
                                 to="/findmaids"
-                                className="block  rounded bg-[#00AEEF] hover:bg-white px-12 py-3 text-sm font-medium text-white hover:text-rose-600 shadow  focus:outline-none focus:ring active:bg-rose-500 sm:w-auto"
+                                className="block  rounded bg-[#00AEEF] hover:bg-white px-12 py-3 text-sm font-medium text-white hover:text-[#065FB1] shadow  focus:outline-none focus:ring active:bg-rose-500 sm:w-auto"
                             >
                                 Find Maid
                             </NavLink>

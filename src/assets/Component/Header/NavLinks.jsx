@@ -44,6 +44,36 @@ const NavLinks = () => {
           Find Maids
         </NavLink>
       </li>
+          <li>
+        <NavLink
+          to="/Blog"
+          className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "text-[#813f20]" : ""
+          }
+        >
+          Blog
+        </NavLink>
+      </li>
+          <li>
+        <NavLink
+          to="/home2"
+          className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "text-[#813f20]" : ""
+          }
+        >
+         Home2
+        </NavLink>
+      </li>
+          <li>
+        <NavLink
+          to="/dashboard"
+          className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "text-[#813f20]" : ""
+          }
+        >
+         Dashboard
+        </NavLink>
+      </li>
 
 
 

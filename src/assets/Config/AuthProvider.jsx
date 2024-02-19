@@ -28,14 +28,14 @@ const [loading, setLoading] = useState(true);
         return signInWithPopup(auth, twitterProvider);
     }
 
-    const signUp = async (email, password, username, photoUrl) => {
+    const signUp = async (email, password, username) => {
         try {
           setLoading(true);
           const userCredential = await createUserWithEmailAndPassword(auth, email, password);
           const user = userCredential.user;
       
           // Update user profile with username and photo URL
-          await updateProfile(user, { displayName: username, photoURL: photoUrl });
+          await updateProfile(user, { displayName: username });
       
           setLoading(false);
       

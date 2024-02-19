@@ -6,12 +6,14 @@ import { AuthContext } from '../Config/AuthProvider';
 
 
 
+
 const Registration = () => {
 
   const { signUp } = useContext(AuthContext);
 
   const textStyle = {
-    color: '#e67700'
+    color: '#065FB1',
+    textTransform : "uppercase"
   };
 
 
@@ -23,92 +25,46 @@ const Registration = () => {
     const email = e.target.email.value;
     const password = e.target.password.value;
     const username = e.target.username.value;
-    const photoUrl = e.target.photoUrl.value;
-    const select = e.target.select.value;
     const phone = e.target.phone.value;
-
-    const userData = {
-      name: username,
-      image: photoUrl,
-      phone: phone,
-      type: select,
-      totalParcelsBooked: 0,
-      totalSpend: 0,
-      ratings: 0,
-      parcelDelivered: 0,
-      reviews: [],
-      email: email
-    };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  
     // Password validation
     const isLengthValid = password.length >= 6;
     const hasUpperCase = /[A-Z]/.test(password);
     const hasSpecialCharacter = /[!@#$%^&*(),.?":{}|<>]/.test(password);
-
+  
     if (!isLengthValid) {
       toast.error('Password must be at least 6 characters long.');
       return;
     }
-
+  
     if (!hasUpperCase) {
       toast.error('Password must contain at least one capital letter.');
       return;
     }
-
+  
     if (!hasSpecialCharacter) {
       toast.error('Password must contain at least one special character.');
       return;
     }
-
-
-    signUp(email, password, username, photoUrl, select)
+  
+    signUp(email, password, username)
       .then(result => {
         console.log(result);
-
-
+  
         //Send Data To Backend Server
         const userData = {
           name: username,
-          image: photoUrl,
           phone: phone,
-          type: select,
-          totalParcelsBooked: 0,
-          totalSpend: 0,
-          ratings: 0,
-          parcelDelivered: 0,
-          reviews: [],
-          email: email
+          email: email,
+          type : "user"
         };
-        
-        
-        console.log(userData);
-        
-        // Send data to the backend server
-        const backendApiEndpoint = 'https://y-two-omega.vercel.app/users';
-        
+  
+        const backendApiEndpoint = 'http://localhost:5000/users';
+  
         fetch(backendApiEndpoint, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            // Add any other necessary headers
           },
           body: JSON.stringify(userData),
         })
@@ -121,40 +77,22 @@ const Registration = () => {
             console.error('Error saving data:', error);
             // Add error handling logic if needed
           });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        //Send Data To Backend Server
+  
         toast.success('Account Successfully created!');
         window.location.href = '/';
       })
       .catch(error => {
         const alreadyExistsError = 'auth/email-already-in-use';
         const errorCode = error.code;
-
-
-        {
-          if (errorCode === alreadyExistsError) {
-            toast.error('You already Have an Account.')
-          }
-          else {
-            toast.error(errorCode)
-          }
+  
+        if (errorCode === alreadyExistsError) {
+          toast.error('You already Have an Account.')
+        } else {
+          toast.error(errorCode)
         }
-      })
+      });
   };
+  
 
 
 
@@ -164,12 +102,13 @@ const Registration = () => {
       <section className=" container mx-auto">
         <div className="lg:grid lg:min-h-screen lg:grid-cols-12">
           <aside
-            className="relative block h-16 lg:order-last lg:col-span-5 lg:h-full xl:col-span-6"
+            className="relative sm:hidden lg:display block h-16 lg:order-last lg:col-span-5 lg:h-full xl:col-span-6"
+          
           >
             <img
               alt="Pattern"
-              src="https://cdn.pixabay.com/photo/2016/05/26/14/50/delivery-1417310_1280.png"
-              className="absolute  top-44 left-32   h-3/4 object-cover"
+              src="https://i.ibb.co/WFmbKD7/register.png"
+              className="absolute  top-44 left-32   h-3/4 "
             />
 
           </aside>
@@ -184,12 +123,18 @@ const Registration = () => {
               <h1
                 className="mt-6 text-2xl font-bold text-gray-900 sm:text-3xl md:text-4xl"
               >
-                Welcome to      <span style={textStyle}>SweptExpress</span>
+                Welcome to      <span style={textStyle}>Maids Central</span>
 
               </h1>
 
               <p className="mt-4 leading-relaxed text-gray-500">
-                Join our community of sneaker enthusiasts to gain access to exclusive releases, special discounts, and personalized recommendations. Becoming a member is quick and easy. Register to get started.
+              By registering with Maids Central, you'll gain access to detailed profiles of our skilled domestic helpers, allowing you to find the perfect match for your needs quickly and efficiently. Don't wait, register now for a hassle-free hiring experience!
+
+
+
+
+
+
               </p>
 
               <form action="/login" onSubmit={handleRegister} className="mt-8 grid grid-cols-6 gap-6">
@@ -237,19 +182,9 @@ const Registration = () => {
                     className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
                   />
                 </div>
-                <div className="col-span-3">
-                  <label htmlFor="username" className="block text-sm font-medium text-gray-700">
-                    Type
-                  </label>
-                  <select
-                    className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
-                    name="select" id="">
-                    <option value="user">user</option>
-                    <option value="user">rider</option>
-                  </select>
-                </div>
 
-                <div className="col-span-6">
+
+                <div className="col-span-3">
                   <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
                     Phone
                   </label>
@@ -261,17 +196,7 @@ const Registration = () => {
                   />
                 </div>
 
-                <div className="col-span-6">
-                  <label htmlFor="photoUrl" className="block text-sm font-medium text-gray-700">
-                    Photo URL
-                  </label>
-                  <input
-                    type="text"
-                    id="photoUrl"
-                    name="photoUrl"
-                    className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
-                  />
-                </div>
+
 
 
 
@@ -293,14 +218,14 @@ const Registration = () => {
 
                 <div className="col-span-6 sm:flex sm:items-center sm:gap-4">
                   <button
-                    className="inline-block shrink-0 rounded-md border border-[#e67700] bg-[#e67700] px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-rose-600 focus:outline-none focus:ring active:text-rose-500"
+                    className="inline-block shrink-0 rounded-md border  bg-[#065FB1] px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:bg-[#00ADEE] focus:outline-none focus:ring active:text-rose-500"
                   >
                     Create an account
-                  </button>
+                  </button> 
 
                   <p className="mt-4 text-sm text-gray-500 sm:mt-0">
-                    Already have an account?
-                    <NavLink to="/login" className="text-[#e67700] text-md font-bold hover:text-red-500 underline">Log in</NavLink>.
+                    Already have an account? &nbsp;
+                    <NavLink to="/login" className="text-[#00ADEE] text-md font-bold hover:text-[#065FB1] underline">Log in</NavLink>.
                   </p>
                 </div>
               </form>

@@ -22,14 +22,8 @@ const SignIn = () => {
 
             const userData = {
                 name: username,
-                image: photoUrl,
                 phone: "",
                 type: 'user',
-                totalParcelsBooked: 0,
-                totalSpend: 0,
-                ratings: 0,
-                parcelDelivered: 0,
-                reviews: [],
                 email: email
             };
 
@@ -108,10 +102,10 @@ const SignIn = () => {
     };
 
     return (
-        <section className="bg-[url(https://www.wowtheme7.com/tf/transpro/assets/img/banner/breadcrumb.png)] py-20 lg:py-[120px]">
+        <section className="bg-[url(https://i.ibb.co/0XxfzSX/login.png)] bg-no-repeat bg-cover py-20 lg:py-[120px] font-rubik">
             <div className="container ">
                 <div className="w-full px-4">
-                    <div className="relative mx-auto max-w-[525px] overflow-hidden rounded-lg bg-gray-300 py-16 px-10 text-center sm:px-12 md:px-[60px]">
+                    <div className="relative mx-auto max-w-[525px] overflow-hidden rounded-lg bg-gray-300  py-16 px-10 text-center sm:px-12 md:px-[60px]">
                         <div className="mb-10 text-center md:mb-16">
                             <Link className="mx-auto inline-block max-w-[660px]">
                                 <img
@@ -132,14 +126,14 @@ const SignIn = () => {
 
                             <div className="mb-10">
                                 <button
-                                    className="border-[#e67700] w-full cursor-pointer rounded-md border  py-3 px-5 text-base text-white transition bg-[#fa4318] hover:bg-[#9c672e]"
+                                    className="border-[#065FB1] w-full font-medium cursor-pointer rounded-md border  py-3 px-5 text-black uppercase  transition bg-[#00ADEE] hover:bg-[#065FB1] hover:text-white"
                                     type="submit"
                                 >
                                     Sign In
                                 </button>
                             </div>
                         </form>
-                        <p className="mb-6 text-base text-[#adadad]">Connect With</p>
+                        <p className="mb-6 text-base text-black">Connect With</p>
                         <ul className="-mx-2 mb-12 flex justify-between">
                             {/* facebook */}
                             <li className="w-full px-2">
@@ -203,15 +197,10 @@ const SignIn = () => {
                                 </Link>
                             </li>
                         </ul>
-                        <Link
-                            href="/#"
-                            className="mb-2 inline-block text-base text-[#fa4318] hover:text-rose-600 hover:underline"
-                        >
-                            Forget Password?
-                        </Link>
-                        <p className="text-base text-[#adadad]">
+                       
+                        <p className="text-base text-black">
                             Not a member yet?
-                            <NavLink to="/registration" className="text-[#fa4318] font-medium hover:underline">
+                            <NavLink to="/registration" className="text-[#065FB1] font-medium hover:underline">
                                 &nbsp; Sign Up
                             </NavLink>
                         </p>

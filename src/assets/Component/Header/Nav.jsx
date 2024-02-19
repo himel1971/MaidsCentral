@@ -49,7 +49,7 @@ const Nav = () => {
 
                         </ul>
                     </div>
-                    <img src="https://i.ibb.co/FwFFpKN/reallogo.jpg" alt="MaidsCentral" className='w-72' border="0"></img>
+                    <img src="https://i.ibb.co/y8tmLDK/reallogo.jpg" alt="MaidsCentral" className='md:w-72 w-64' border="0"></img>
 
                 </div>
                 <div className="navbar-center hidden lg:flex">
@@ -69,27 +69,39 @@ const Nav = () => {
                     {!user ?
                         <div className='gap-3 flex'>
                             <NavLink to="/login" className=" hover:text-[#7CC23E] hidden text-lg md:flex  px-9 py-2.5  font-medium text-black uppercase ">Log In</NavLink>
-                            
-                             <NavLink to="/register" className="btn rounded-md hover:bg-[#E67700] hidden md:flex  px-8 bg-[#7CC23E] py-2.5 text-sm font-medium text-white shadow">Register</NavLink>
+
+                            <NavLink to="/register" className="btn rounded-md hover:bg-[#E67700] hidden md:flex  px-8 bg-[#7CC23E] py-2.5 text-sm font-medium text-white shadow">Register</NavLink>
 
                         </div>
                         :
-                        <div className="dropdown dropdown-end">
-                            <label tabIndex={0} className="btn btn-lg btn-ghost btn-circle avatar">
-                                <div className="w-10 md:w-12 rounded-full">
-                                    <img src={photoURL || 'https://i.ibb.co/v3hYr5s/Education.png'} />
-                                </div>
-                            </label>
-                            <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-200 rounded-box w-auto text-base font-medium">
-                                <li className='select-none uppercase'>{displayName || "Unknown"} </li>
-                                <li className='select-none italic '>{email}</li>
-                                <hr />
-                                <li> <Link className='capitalize' to={`/findmaids`}>Find a Maid</Link></li>
-                                <li> <Link className='capitalize' to={`/contact`}>Contact Us</Link></li>
-                                <li> <a className='capitalize' target='_blank' href='https://wa.me/message/OTPYQ2VQURDEC1'>Chat With Us</a></li>
-                                <li><Link className='hover:bg-red-400 text-base font-medium' onClick={logOut}>Logout</Link></li>
-                            </ul>
-                        </div>
+                        <>
+                            <div className="dropdown dropdown-end">
+                                <label tabIndex={0} className="btn btn-lg btn-ghost btn-circle avatar">
+                                    <div className="w-10 md:w-12 rounded-full">
+                                        <img src={photoURL || 'https://i.ibb.co/v3hYr5s/Education.png'} />
+                                    </div>
+                                </label>
+                                <ul tabIndex={0} className="mt-3 z-40 p-2 shadow menu menu-sm dropdown-content bg-base-200 rounded-box w-auto text-base font-medium">
+                                    <li className='select-none uppercase'>{displayName || "Unknown"} </li>
+                                    <li className='select-none italic '>{email}</li>
+                                    <hr />
+                                    <li> <Link className='capitalize' to={`/findmaids`}>Find a Maid</Link></li>
+                                    <li> <Link className='capitalize' to={`/contact`}>Contact Us</Link></li>
+                                    <li> <a className='capitalize' target='_blank' href='https://wa.me/message/OTPYQ2VQURDEC1'>Chat With Us</a></li>
+                                    <li><Link className='hover:bg-red-400 text-base font-medium' onClick={logOut}>Logout</Link></li>
+                                </ul>
+                            </div>
+                            <a className='hidden lg:block' href="https://wa.me/message/OTPYQ2VQURDEC1" target="_blank">
+                                <button
+                                    type="button"
+                                    className="px-5 py-3 font-semibold border rounded border-gray-800 text-[#065FB1] text-lg">
+                                    Contact us
+                                </button>
+                            </a>
+
+
+                        </>
+
                     }
 
                 </div>

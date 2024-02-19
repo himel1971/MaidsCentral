@@ -12,7 +12,7 @@ const Footer = () => {
 
               <img
                 className=' w-64'
-                src="https://i.ibb.co/FwFFpKN/reallogo.jpg" 
+                src="https://i.ibb.co/y8tmLDK/reallogo.jpg" 
                 alt="logo" 
 
               />
