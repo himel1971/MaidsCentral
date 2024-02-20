@@ -7,7 +7,7 @@ const Contact = () => {
 	return (
 		<div className='font-rubik container mx-auto'>
 			<MapBox></MapBox>
-			<LocationList></LocationList>
+			{/* <LocationList></LocationList> */}
 			<ContactForm></ContactForm>
 
 		</div>

@@ -19,19 +19,20 @@ const Location = ({ branch, location, number }) => {
                     </svg>
                 </div>
                 <div className="w-full">
-                    <h4 className="mb-1 text-xl font-bold text-[#065FB1]">
+                    <h4 className="mb-1 text-2xl font-bold text-[#065FB1]">
                         {branch}
                     </h4>
                     <p className="text-base text-body-color dark:text-dark-6">
                         {location}
                     </p>
 
-                    <h4 className="mb-1 text-lg font-bold text-[#065FB1]">
-                    <b>Telephone:</b>{number}
-                    </h4>
+
                     <p className="text-base text-body-color dark:text-dark-6">
-                    <b>Telephone:</b> {number}
+                        <b>Email:</b> info.maidsc@gmail.com
                     </p>
+                    <h4 className="mb-1 text-lg font-medium text-[#065FB1]">
+                        <b>Telephone:</b>{number}
+                    </h4>
                 </div>
             </div>
         </div>

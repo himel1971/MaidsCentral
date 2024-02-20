@@ -1,20 +1,35 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { AuthContext } from '../../Config/AuthProvider';
 import { Link, Outlet } from 'react-router-dom';
 import DashboardNav from '../../Component/Dashboard/DashboardNav';
 
 const Dashboard = () => {
+    const [isLoading, setIsLoading] = useState(false);
 
     const { user, singOut } = useContext(AuthContext);
     const { displayName, email, photoURL } = user || {};
 
+    const location = useLocation();
 
+    useEffect(() => {
+        // Set isLoading to true when the location changes
+        setIsLoading(true);
+
+        // Simulate an asynchronous operation (e.g., fetching data)
+        // Replace this with your actual async operation (e.g., fetching data from an API)
+        const asyncOperation = async () => {
+            await new Promise((resolve) => setTimeout(resolve, 1000)); // Simulate delay
+
+            // After the async operation is completed, set isLoading to false
+            setIsLoading(false);
+        };
+
+        asyncOperation();
+    }, [location.pathname]); // Run this effect when the pathname in the location changes
 
     return (
         <>
-
-
-
             <DashboardNav></DashboardNav>
             <aside id="logo-sidebar" className="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700" aria-label="Sidebar">
                 <div className="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800">
@@ -66,16 +81,18 @@ const Dashboard = () => {
 
             <div className="p-4 sm:ml-64">
                 <div className="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-14">
-
-
                     <div className=" rounded mt-6 bg-gray-50 dark:bg-gray-800">
-                        <Outlet></Outlet>
-
+                        {isLoading ? (
+                            // If isLoading is true, display a loading spinner or message
+                            <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin container mx-auto border-violet-600"></div>
+                            
+                        ) : (
+                            // If isLoading is false, render the content
+                            <Outlet />
+                        )}
                     </div>
-
                 </div>
             </div>
-
         </>
     )
 }

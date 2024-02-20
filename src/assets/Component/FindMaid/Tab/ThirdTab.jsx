@@ -4,7 +4,7 @@ import HeadlineForFirstTab from './Shared/HeadlineForFirstTab';
 const ThirdTab = ({ data }) => {
   // console.log(data);
 
-  const { DietaryRestrictions, FoodHandling } = data;
+  const { restriction, pork_status } = data;
   return (
     <section className='mt-6'>
       <div className="overflow-x-auto">
@@ -14,11 +14,11 @@ const ThirdTab = ({ data }) => {
             <tr>
 
               <th>
-                <HeadlineForFirstTab title='Dietary Restrictions' data={DietaryRestrictions} ></HeadlineForFirstTab>
+                <HeadlineForFirstTab title='Handel Pork?' data={pork_status} ></HeadlineForFirstTab>
 
               </th>
               <th>
-                <HeadlineForFirstTab title='Dietary Restrictions' data={FoodHandling} ></HeadlineForFirstTab>
+                <HeadlineForFirstTab title='Dietary Restrictions' data={restriction} ></HeadlineForFirstTab>
 
               </th>
 

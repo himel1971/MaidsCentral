@@ -28,7 +28,7 @@ const TableForSecondTab = ({experience}) => {
               <p>{item.duration}</p>
             </td>
             <td className="p-3">
-              <p>{item.Country}</p>
+              <p>{item.country}</p>
             </td>
             <td className="p-3">
               <p>{item.employer}</p>

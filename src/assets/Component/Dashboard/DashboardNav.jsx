@@ -32,7 +32,7 @@ const DashboardNav = () => {
                                     <h1 className='text-xl font-mono uppercase font-medium'>{email}</h1>
 
                                 </div>
-                                <img className="w-12 h-12 rounded-full" src={photoURL || 'https://i.ibb.co/v3hYr5s/Education.png'} alt="user photo" />
+                                <img className="w-12 h-12 rounded-full" src={photoURL || 'https://i.ibb.co/KLR28G2/user-avatar.png'} alt="user photo" />
                             </div>
                         </div>
                     </div>

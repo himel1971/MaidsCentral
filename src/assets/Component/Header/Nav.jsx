@@ -1,14 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom';
-
 import NavLinks from './NavLinks';
 import { AuthContext } from '../../Config/AuthProvider';
-
-
-
-
-
-
 
 
 
@@ -22,7 +15,7 @@ const Nav = () => {
 
     return (
         <>
-            <div className="navbar z-10  font-rubik text-sm pt-6 container mx-auto bg-base-100 h-[8vh] justify-between flex">
+            <div className="navbar z-10  font-rubik text-sm pt-6 container mx-auto bg-base-100 h-[10vh] justify-between flex">
                 <div className="flex justify-between">
 
                     <div className="dropdown">
@@ -66,6 +59,11 @@ const Nav = () => {
                     {/* after  login photo text badge  */}
 
 
+
+
+
+
+
                     {!user ?
                         <div className='gap-3 flex'>
                             <NavLink to="/login" className=" hover:text-[#7CC23E] hidden text-lg md:flex  px-9 py-2.5  font-medium text-black uppercase ">Log In</NavLink>
@@ -78,7 +76,7 @@ const Nav = () => {
                             <div className="dropdown dropdown-end">
                                 <label tabIndex={0} className="btn btn-lg btn-ghost btn-circle avatar">
                                     <div className="w-10 md:w-12 rounded-full">
-                                        <img src={photoURL || 'https://i.ibb.co/v3hYr5s/Education.png'} />
+                                        <img src={photoURL || 'https://i.ibb.co/KLR28G2/user-avatar.png'} />
                                     </div>
                                 </label>
                                 <ul tabIndex={0} className="mt-3 z-40 p-2 shadow menu menu-sm dropdown-content bg-base-200 rounded-box w-auto text-base font-medium">

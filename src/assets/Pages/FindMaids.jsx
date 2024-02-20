@@ -100,12 +100,16 @@ const FindMaids = () => {
         {/* Religion filter */}
         <div className='flex items-center space-x-5 '>
           <h1>Religion:</h1>
-          <FilterButtons options={religions} selectedOption={filters.religion} onSelect={religion => setFilters({ ...filters, religion: religion })} />
+          <FilterButtons options={religions} selectedOption={filters.religion} 
+          onSelect={religion => setFilters({ ...filters, religion: religion })} />
         </div>
         {/* Skills filter */}
         <div className='flex items-center space-x-5 '>
           <h1>Skill:</h1>
-          <FilterButtons options={skills} selectedOption={null} onSelect={skill => setFilters({ ...filters, skills: filters.skills.includes(skill) ? filters.skills.filter(s => s !== skill) : [...filters.skills, skill] })} />
+          <FilterButtons 
+          options={skills} 
+          selectedOption={null} 
+          onSelect={skill => setFilters({ ...filters, skills: filters.skills.includes(skill) ? filters.skills.filter(s => s !== skill) : [...filters.skills, skill] })} />
 
         </div>
         {/* Reset Filters button */}

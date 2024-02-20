@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 
 const AllMaids = () => {
@@ -25,6 +26,51 @@ const AllMaids = () => {
             .then(data => setUsers(data))
             .catch(error => console.error('Error fetching users:', error));
     };
+
+
+
+
+
+
+    const handleDelete = (_id) => {
+        // Display a confirmation alert
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            // If the user confirms, proceed with the deletion
+            if (result.isConfirmed) {
+                const URL = `http://localhost:5000/maids/${_id}`;
+                fetch(URL, {
+                    method: 'DELETE',
+                })
+                    .then((res) => res.json())
+                    .then((data) => {
+                        console.log(data);
+                        if (data.deletedCount > 0) {
+                            toast.success('Successfully Deleted!');
+                            const filterData = updatedOrder.filter((product) => product._id !== _id);
+                            setUpdatedOrder(filterData);
+                            window.location.reload();
+                        }
+                    })
+                    .catch((error) => {
+                        console.error('Error deleting Maid:', error.message);
+                        toast.error('Failed to delete Maid');
+                    });
+            }
+        });
+    };
+    
+
+
+
+
 
 
 
@@ -64,15 +110,15 @@ const AllMaids = () => {
                         {users.map(user => (
                             <tr key={user._id} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                                 <td className="px-6 py-4 uppercase">{user.type}
-                                
-                                <img className="mask mask-square h-9" src={user.picture_url} />
-                                
+
+                                    <img className="mask mask-square h-9" src={user.picture_url} />
+
                                 </td>
                                 <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">{user.name}</th>
                                 <td className="px-6 py-4">{user.nationality}</td>
                                 <td className="px-6 py-4">{user.religion}</td>
                                 <td className="px-6 py-4 text-right">
-                                   
+
                                     <Link onClick={() => handleDelete(user._id)} className="font-medium text-[#EA580C] dark:text-blue-500 hover:underline">Delete</Link>
                                 </td>
                             </tr>

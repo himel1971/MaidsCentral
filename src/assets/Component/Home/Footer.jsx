@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <>
 
-      <footer className="px-4 divide-y bg-black text-white">
+      <footer className="px-4 divide-y bg-black font-rubik text-white">
         <div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
           <div className="lg:w-1/3">
             {/* LOGO  */}
@@ -12,8 +12,8 @@ const Footer = () => {
 
               <img
                 className=' w-64'
-                src="https://i.ibb.co/y8tmLDK/reallogo.jpg" 
-                alt="logo" 
+                src="https://i.ibb.co/y8tmLDK/reallogo.jpg"
+                alt="logo"
 
               />
             </a>
@@ -23,7 +23,7 @@ const Footer = () => {
           </div>
           <div className="grid grid-cols-2 text-sm gap-x-3 gap-y-8 lg:w-2/3 sm:grid-cols-4">
             <div className="space-y-3">
-              <h3 className="tracking-wider  uppercase text-gray-900">Get In Touch</h3>
+              <h3 className="tracking-wider  uppercase text-white">Get In Touch</h3>
               <ul className="space-y-1">
                 <li>
                   <a rel="noopener noreferrer" href="#">Features</a>
@@ -40,7 +40,7 @@ const Footer = () => {
               </ul>
             </div>
             <div className="space-y-3">
-              <h3 className="tracki uppercase text-gray-900">Company</h3>
+              <h3 className="tracki uppercase text-white">Company</h3>
               <ul className="space-y-1">
                 <li>
                   <a rel="noopener noreferrer" href="#">Privacy</a>
@@ -50,20 +50,44 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
+
+
+
+
+
             <div className="space-y-3">
-              <h3 className="uppercase text-gray-900">Developers</h3>
+              <h3 className="uppercase text-white ">Maids Service</h3>
               <ul className="space-y-1">
                 <li>
-                  <a rel="noopener noreferrer" href="#">Public API</a>
+                  <a className='text-[#00ADEE]' href="./Forms/POEA.pdf" download_>
+                  ◽  New Maid Arrival Transport & Administration
+                  </a>
                 </li>
                 <li>
-                  <a rel="noopener noreferrer" href="#">Documentation</a>
+
+                  <a className='text-[#00ADEE]' href="./Forms/OWWA.pdf" download_>
+                  ◽ Maid Home Leave Application
+                  </a>
                 </li>
                 <li>
-                  <a rel="noopener noreferrer" href="#">Guides</a>
+                  <a className='text-[#00ADEE]' >
+                  ◽ Maid Passport Renewal
+                  </a>
+
                 </li>
               </ul>
             </div>
+
+
+
+
+
+
+
+
+
+
+
             <div className="space-y-3">
               <div className="uppercase text-gray-900">Social media</div>
               <div className="flex justify-start space-x-3">
@@ -86,7 +110,15 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="py-6 text-sm text-center text-gray-600">© 2024 Maids Central. All rights reserved.</div>
+
+
+
+        <div className="py-6 text-sm text-center text-gray-300">
+        © 2024 Maids Central. All rights reserved. Designed By <a className='text-[#00ADEE]' href="#">Maria Mi.</a>
+        </div>
+
+
+
       </footer>
 
     </>
