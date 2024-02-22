@@ -72,30 +72,32 @@ const AddMaids = () => {
 
     // Prepare the data object
     const data = {
-      name: e.target.elements.name.value,
-      picture_url: e.target.elements.picture.value,
-      date_of_birth: e.target.elements.date_of_birth.value,
-      place_of_birth: e.target.elements.place_of_birth.value,
-      height: e.target.elements.height.value,
-      weight: e.target.elements.weight.value,
-      marital_status: e.target.elements.marital_status.value,
-      pork_status: e.target.elements.pork_status.value,
-      religion: religions,
-      rest_day_preference: e.target.elements.rest_day_preference.value,
-      education: e.target.elements.education.value,
-      experience_years: e.target.elements.experience_years.value,
-      nationality: e.target.elements.nationality.value,
-      languages: e.target.elements.languages.value,
-      home_address: e.target.elements.home_address.value,
-      number_of_children: e.target.elements.number_of_children.value,
-      age_of_children: e.target.elements.age_of_children.value,
-      skills: skills,
-      restriction: e.target.elements.restriction.value,
-      experience: experienceFields
+      name: e.target.elements.name.value.toLowerCase(),
+      picture_url: e.target.elements.picture.value.toLowerCase(),
+      date_of_birth: e.target.elements.date_of_birth.value.toLowerCase(),
+      place_of_birth: e.target.elements.place_of_birth.value.toLowerCase(),
+      height: e.target.elements.height.value.toLowerCase(),
+      weight: e.target.elements.weight.value.toLowerCase(),
+      marital_status: e.target.elements.marital_status.value.toLowerCase(),
+      pork_status: e.target.elements.pork_status.value.toLowerCase(),
+      religion: religions.map(religion => religion.toLowerCase()),
+      rest_day_preference: e.target.elements.rest_day_preference.value.toLowerCase(),
+      education: e.target.elements.education.value.toLowerCase(),
+      experience_years: e.target.elements.experience_years.value.toLowerCase(),
+      nationality: e.target.elements.nationality.value.toLowerCase(),
+      languages: e.target.elements.languages.value.toLowerCase(),
+      home_address: e.target.elements.home_address.value.toLowerCase(),
+      number_of_children: e.target.elements.number_of_children.value.toLowerCase(),
+      age_of_children: e.target.elements.age_of_children.value.toLowerCase(),
+      skills: skills.map(skill => skill.toLowerCase()),
+      restriction: e.target.elements.restriction.value.toLowerCase(),
+      experience: experienceFields.map(experience => ({
+        country: experience.country.toLowerCase(),
+        employer: experience.employer.toLowerCase(),
+        duration: experience.duration.toLowerCase(),
+        responsibilities: experience.responsibilities.toLowerCase(),
+      }))
     };
-
-    // Add the experience data
-    data.experience = experienceFields;
 
     // Send a POST request to the backend
     const response = await fetch("http://localhost:5000/maids", {
@@ -109,15 +111,11 @@ const AddMaids = () => {
     // Handle the response
     if (response.ok) {
       // Success
-
       Swal.fire({
         title: "Maid added successfully!",
         text: "we added on more maid successfully to our server!!",
         icon: "success"
       });
-
-
-      // alert("Maid added successfully!");
     } else {
       // Error
       Swal.fire({
@@ -126,13 +124,11 @@ const AddMaids = () => {
         text: "Something went wrong!",
         footer: 'Failed to add maid. Please try again later.'
       });
-      // alert("Failed to add maid. Please try again later.");
     }
-
-
 
     console.log(data);
   };
+
 
 
 

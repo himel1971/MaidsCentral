@@ -20,7 +20,7 @@ const Tips = () => {
 
     return (
         <>
-            <div className="hero font-rubik min-h-screen  bg-cover" style={{ backgroundImage: 'url(https://i.ibb.co/1sbmxF7/2.png)' }}>
+            <div className="hero font-rubik min-h-screen  bg-cover" style={{ backgroundImage: 'url(https://i.ibb.co/sRy5y5P/let-s-share-our-TOP-MAID-STORIES.png)' }}>
             <div className="hero-content flex justify-end items-center text-neutral-content">
     <div className="max-w-6xl md:ml-96">
         <h1 className="mb-12 md:text-8xl text-5xl text-white text-center capitalize">

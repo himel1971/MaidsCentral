@@ -19,18 +19,18 @@ const SingleMaidData = () => {
     // console.log(maid);
 
     return (
-        <section className='container flex justify-between mx-auto my-16'>
-            <div className='w-[65%] border p-10 rounded-lg'>
+        <section className='container lg:flex justify-between mx-auto my-16'>
+            <div className='lg:w-[65%] border p-10 rounded-lg'>
 
 
-                <section className='space-x-8 py-7 flex '>
+                <section className='space-x-8 lg:flex py-7 justify-center items-center '>
 
                     <div className="avatar ">
-                        <div className="w-40 mask mask-squircle">
+                        <div className="w-40  mask mask-squircle">
                             <img src={picture_url} alt="" />
                         </div>
                     </div>
-                    <div className='flex'>
+                    <div className='lg:flex'>
                         <div className='mt-2'>
                             <h1 className='font-bold text-4xl cSecondary uppercase'>{name}</h1>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, quas.</p>
@@ -71,7 +71,7 @@ const SingleMaidData = () => {
             </div>
 {/* form text  */}
 
-            <div className=' border p-8 right-[25px] items-end w-[30%]  rounded-lg '>
+            <div className=' border p-8 right-[25px] items-end lg:w-[30%]  rounded-lg '>
                <BookForm data={maid}></BookForm>
             </div>
 

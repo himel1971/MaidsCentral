@@ -12,18 +12,17 @@ const FindMaids = () => {
   const ages = Array.from(new Set(maids.map(maid => Math.floor((new Date() - new Date(maid.date_of_birth)) / 31557600000 / 10) * 10)));
   const religions = Array.from(new Set(maids.map(maid => maid.religion)));
   const skills = Array.from(new Set(maids.flatMap(maid => maid.skills)));
+  const nationalities = Array.from(new Set(maids.map(maid => maid.nationality)));
+
 
   // State to store selected filter criteria
   const [filters, setFilters] = useState({
     maritalStatus: null,
     ageRange: null,
     religion: null,
-    skills: []
+    skills: [],
+    nationality: null,
   });
-
-
-  console.log(filters);
-
 
   // State to store pagination
   const [currentPage, setCurrentPage] = useState(1);
@@ -31,7 +30,7 @@ const FindMaids = () => {
 
   // Filter function
   const filterMaids = (maid) => {
-    const { maritalStatus, ageRange, religion, skills } = filters;
+    const { maritalStatus, ageRange, religion, skills, nationality } = filters;
 
     if (maritalStatus && maid.marital_status !== maritalStatus) return false;
 
@@ -43,6 +42,8 @@ const FindMaids = () => {
     if (religion && maid.religion !== religion) return false;
 
     if (skills.length > 0 && !skills.every(skill => maid.skills.includes(skill))) return false;
+
+    if (nationality && maid.nationality !== nationality) return false;
 
     return true;
   };
@@ -61,7 +62,8 @@ const FindMaids = () => {
       maritalStatus: null,
       ageRange: null,
       religion: null,
-      skills: []
+      skills: [],
+      nationality: null,
     });
   };
 
@@ -81,47 +83,51 @@ const FindMaids = () => {
   };
 
   return (
-    <div className='container mx-auto my-20'>
+    <div className='container px-3 mx-auto my-20 poppins-regular'>
       {/* Your existing JSX code for the header */}
 
       {/* Filter buttons */}
-      <div className=" flex flex-col space-y-5 mb-8">
+      <div className="flex flex-col space-y-5 mb-8">
         {/* Marital Status filter */}
         <div className='flex items-center space-x-5'>
-          <h1>Marital Status:</h1>
+          <h1 className='text-[#065FB1] font-bold uppercase'>Marital Status:</h1>
           <FilterButtons options={maritalStatuses} selectedOption={filters.maritalStatus} onSelect={status => setFilters({ ...filters, maritalStatus: status })} />
         </div>
 
         {/* Age filter */}
-        <div className='flex items-center  space-x-5'>
-          <h1>Age:</h1>
+        <div className='flex items-center space-x-5'>
+          <h1 className='text-[#065FB1] font-bold uppercase'>Age:</h1>
           <FilterButtons options={ages.map(age => `${age} - ${age + 9}`)} selectedOption={filters.ageRange ? `${filters.ageRange.min} - ${filters.ageRange.max}` : null} onSelect={ageRange => setFilters({ ...filters, ageRange: { min: parseInt(ageRange), max: parseInt(ageRange.split(' - ')[1]) } })} />
         </div>
         {/* Religion filter */}
-        <div className='flex items-center space-x-5 '>
-          <h1>Religion:</h1>
-          <FilterButtons options={religions} selectedOption={filters.religion} 
-          onSelect={religion => setFilters({ ...filters, religion: religion })} />
+        <div className='flex items-center space-x-5'>
+          <h1 className='text-[#065FB1] font-bold uppercase'>Religion:</h1>
+          <FilterButtons options={religions} selectedOption={filters.religion} onSelect={religion => setFilters({ ...filters, religion: religion })} />
         </div>
+
+        {/* Nationality filter */}
+        <div className='flex items-center space-x-5'>
+          <h1 className='text-[#065FB1] font-bold uppercase'>Nationality:</h1>
+          <FilterButtons options={nationalities} selectedOption={filters.nationality} onSelect={nationality => setFilters({ ...filters, nationality: nationality })} />
+        </div>
+
         {/* Skills filter */}
         <div className='flex items-center space-x-5 '>
-          <h1>Skill:</h1>
-          <FilterButtons 
-          options={skills} 
-          selectedOption={null} 
-          onSelect={skill => setFilters({ ...filters, skills: filters.skills.includes(skill) ? filters.skills.filter(s => s !== skill) : [...filters.skills, skill] })} />
+          <h1 className='text-[#065FB1] font-bold uppercase'>Skill:</h1>
+          <FilterButtons options={skills} selectedOption={null} onSelect={skill => setFilters({ ...filters, skills: filters.skills.includes(skill) ? filters.skills.filter(s => s !== skill) : [...filters.skills, skill] })} />
 
         </div>
         {/* Reset Filters button */}
         <div className="flex items-center">
+          {/* {filters.skills.length > 0 && <p>Filters Applied: {filters.skills.join(', ')}</p>} */}
           <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-mg" onClick={resetFilters}>Reset Filters</button>
         </div>
       </div>
 
-<hr />
-
+      <hr />
+      {filters.skills.length > 0 && <p><span className='text-[#065FB1] font-bold uppercase'>Showing Profile which match:</span> {filters.skills.join(', ')}</p>}
       {/* Display maid profiles */}
-      <div className=' my-12'>
+      <div className='my-12'>
         <MaidList maids={currentMaids} />
       </div>
 

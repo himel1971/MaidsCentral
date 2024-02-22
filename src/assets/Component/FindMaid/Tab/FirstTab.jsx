@@ -7,7 +7,7 @@ const FirstTab = ({ data }) => {
   // console.log(data);
   const age = new Date().getFullYear() - new Date(date_of_birth).getFullYear();
   return (
-    <section className='lg:flex m-4 mt-6 space-x-12 spa'>
+    <section className='lg:flex m-4 mt-6 lg:space-x-12'>
 
       <div className='space-y-5'>
         <HeadlineForFirstTab title='Date Of Birth' data={date_of_birth}></HeadlineForFirstTab>
@@ -23,7 +23,7 @@ const FirstTab = ({ data }) => {
 
       {/* rightside */}
 
-      <div className='space-y-5'>
+      <div className='space-y-5 ' >
         <HeadlineForFirstTab title='Age' data={age}></HeadlineForFirstTab>
         <HeadlineForFirstTab title='Nationality' data={nationality}></HeadlineForFirstTab>
         <HeadlineForFirstTab title='Height' data={height}></HeadlineForFirstTab>
