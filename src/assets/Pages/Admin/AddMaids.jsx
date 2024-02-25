@@ -4,8 +4,9 @@ import Swal from 'sweetalert2';
 const AddMaids = () => {
 
 
-
-
+  const [file, setFile] = useState(null);
+  const [imageUrl, setImageUrl] = useState(null);
+  const [age, setAge] = useState('');
 
   // add experience function starts
   const [experienceFields, setExperienceFields] = useState([
@@ -58,7 +59,31 @@ const AddMaids = () => {
   //  Add religion end
 
 
+  //image upload
+  const handleFileChange = (e) => {
+    const selectedFile = e.target.files[0];
+    setFile(selectedFile);
+    setImageUrl(URL.createObjectURL(selectedFile));
+  };
 
+  const handleImageUpload = async () => {
+    const formData = new FormData();
+    formData.append('image', file);
+
+    const response = await fetch('https://api.imgbb.com/1/upload?key=4981389f0f38b16544659f3811d2a130', {
+      method: 'POST',
+      body: formData,
+    });
+
+    if (response.ok) {
+      const data = await response.json();
+      return data.data.url;
+    } else {
+      throw new Error('Failed to upload image');
+    }
+  };
+
+  //image upload
 
 
 
@@ -69,64 +94,77 @@ const AddMaids = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    try {
+      const imageUrl = await handleImageUpload();
+      const dateOfBirth = new Date(e.target.elements.date_of_birth.value);
+      const currentDate = new Date();
+      const calculatedAge = currentDate.getFullYear() - dateOfBirth.getFullYear();
+      setAge(calculatedAge);
 
-    // Prepare the data object
-    const data = {
-      name: e.target.elements.name.value.toLowerCase(),
-      picture_url: e.target.elements.picture.value.toLowerCase(),
-      date_of_birth: e.target.elements.date_of_birth.value.toLowerCase(),
-      place_of_birth: e.target.elements.place_of_birth.value.toLowerCase(),
-      height: e.target.elements.height.value.toLowerCase(),
-      weight: e.target.elements.weight.value.toLowerCase(),
-      marital_status: e.target.elements.marital_status.value.toLowerCase(),
-      pork_status: e.target.elements.pork_status.value.toLowerCase(),
-      religion: religions.map(religion => religion.toLowerCase()),
-      rest_day_preference: e.target.elements.rest_day_preference.value.toLowerCase(),
-      education: e.target.elements.education.value.toLowerCase(),
-      experience_years: e.target.elements.experience_years.value.toLowerCase(),
-      nationality: e.target.elements.nationality.value.toLowerCase(),
-      languages: e.target.elements.languages.value.toLowerCase(),
-      home_address: e.target.elements.home_address.value.toLowerCase(),
-      number_of_children: e.target.elements.number_of_children.value.toLowerCase(),
-      age_of_children: e.target.elements.age_of_children.value.toLowerCase(),
-      skills: skills.map(skill => skill.toLowerCase()),
-      restriction: e.target.elements.restriction.value.toLowerCase(),
-      experience: experienceFields.map(experience => ({
-        country: experience.country.toLowerCase(),
-        employer: experience.employer.toLowerCase(),
-        duration: experience.duration.toLowerCase(),
-        responsibilities: experience.responsibilities.toLowerCase(),
-      }))
-    };
+      // Prepare the data object
+      const data = {
+        name: e.target.elements.name.value.toLowerCase(),
+        picture_url: imageUrl,
+        age: calculatedAge,
+        date_of_birth: e.target.elements.date_of_birth.value,
+        place_of_birth: e.target.elements.place_of_birth.value.toLowerCase(),
+        height: e.target.elements.height.value,
+        weight: e.target.elements.weight.value,
+        marital_status: e.target.elements.marital_status.value.toLowerCase(),
+        pork_status: e.target.elements.pork_status.value,
+        // religion: religions.map(religion => religion.toLowerCase()), religion_status
+        religion: e.target.elements.religion_status.value.toLowerCase(),
+        rest_day_preference: e.target.elements.rest_day_preference.value.toLowerCase(),
+        education: e.target.elements.education.value.toLowerCase(),
+        experience_years: e.target.elements.experience_years.value,
+        nationality: e.target.elements.nationality.value.toLowerCase(),
+        languages: e.target.elements.languages.value.toLowerCase(),
+        home_address: e.target.elements.home_address.value.toLowerCase(),
+        number_of_children: e.target.elements.number_of_children.value,
+        age_of_children: e.target.elements.age_of_children.value,
+        skills: skills.map(skill => skill.toLowerCase()),
+        restriction: e.target.elements.restriction.value.toLowerCase(),
+        experience: experienceFields.map(experience => ({
+          country: experience.country.toLowerCase(),
+          employer: experience.employer.toLowerCase(),
+          duration: experience.duration.toLowerCase(),
+          responsibilities: experience.responsibilities.toLowerCase(),
+        }))
+      };
 
-    // Send a POST request to the backend
-    const response = await fetch("http://localhost:5000/maids", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    });
-
-    // Handle the response
-    if (response.ok) {
-      // Success
-      Swal.fire({
-        title: "Maid added successfully!",
-        text: "we added on more maid successfully to our server!!",
-        icon: "success"
+      // Send a POST request to the backend
+      const response = await fetch('http://localhost:5000/maids', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
       });
-    } else {
-      // Error
+
+      if (response.ok) {
+        // Success
+        Swal.fire({
+          title: 'Maid added successfully!',
+          text: 'we added on more maid successfully to our server!!',
+          icon: 'success',
+        });
+      } else {
+        // Error
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Something went wrong!',
+          footer: 'Failed to add maid. Please try again later.',
+        });
+      }
+    } catch (error) {
       Swal.fire({
-        icon: "error",
-        title: "Oops...",
-        text: "Something went wrong!",
-        footer: 'Failed to add maid. Please try again later.'
+        icon: 'error',
+        title: 'Oops...',
+        text: error.message,
+        footer: 'Failed to upload image.',
       });
     }
-
-    console.log(data);
   };
 
 
@@ -156,7 +194,10 @@ const AddMaids = () => {
             </div>
             <div className="col-span-full sm:col-span-3">
               <label className="text-sm">Picture Links</label>
-              <input id="picture" type="text" placeholder="Maid Profile Picture link" className="w-full rounded-md focus:ring focus:ri focus:ri border-gray-300 text-gray-900" required />
+              <div className='flex items-center justify-center'>
+                <input id="picture" type="file" onChange={handleFileChange} className="w-full rounded-md focus:ring focus:ri focus:ri border-gray-300 text-gray-900" accept="image/*" required />
+                {imageUrl && <img src={imageUrl} alt="Preview" className="w-20 h-auto rounded-md border-gray-300 border" />}
+              </div>
             </div>
             {/* <div className="col-span-full">
               <label className="text-sm">Address</label>
@@ -164,19 +205,19 @@ const AddMaids = () => {
             </div> */}
             <div className="col-span-full sm:col-span-2">
               <label className="text-sm">Date of Birth</label>
-              <input id="date_of_birth" type="date" placeholder="Date of Birth" className="w-full rounded-md focus:ring focus:ri focus:ri border-gray-300 text-gray-900" required/>
+              <input id="date_of_birth" type="date" placeholder="Date of Birth" className="w-full rounded-md focus:ring focus:ri focus:ri border-gray-300 text-gray-900" required />
             </div>
             <div className="col-span-full sm:col-span-2">
               <label className="text-sm">Place of Birth</label>
-              <input id="place_of_birth" type="text" placeholder="Place of Birth" className="w-full rounded-md focus:ring focus:ri focus:ri border-gray-300 text-gray-900" required/>
+              <input id="place_of_birth" type="text" placeholder="Place of Birth" className="w-full rounded-md focus:ring focus:ri focus:ri border-gray-300 text-gray-900" required />
             </div>
             <div className="col-span-full sm:col-span-2">
               <label className="text-sm">Height</label>
-              <input id="height" type="text" placeholder="Height" className="w-full rounded-md focus:ring focus:ri focus:ri border-gray-300 text-gray-900" required/>
+              <input id="height" type="text" placeholder="Height" className="w-full rounded-md focus:ring focus:ri focus:ri border-gray-300 text-gray-900" required />
             </div>
             <div className="col-span-full sm:col-span-2">
               <label className="text-sm">Weight</label>
-              <input id="weight" type="text" placeholder="Weight" className="w-full rounded-md focus:ring focus:ri focus:ri border-gray-300 text-gray-900" required/>
+              <input id="weight" type="text" placeholder="Weight" className="w-full rounded-md focus:ring focus:ri focus:ri border-gray-300 text-gray-900" required />
             </div>
             <div className="col-span-full sm:col-span-2">
               <label className="text-sm">Marital Status</label>
@@ -198,7 +239,7 @@ const AddMaids = () => {
 
             <div className="col-span-full">
               <label className="text-sm">Religion</label> &nbsp;
-              {religions.map((religion, index) => (
+              {/* {religions.map((religion, index) => (
                 <div key={index}>
                   <input
                     type="text"
@@ -214,7 +255,16 @@ const AddMaids = () => {
                   <button type="button" onClick={() => handleRemoveReligion(index)} className="px-4 py-2 border rounded-md border-gray-800">Remove Religion</button>
                 </div>
               ))}
-              <button type="button" onClick={handleAddReligion} className="px-4 py-2 border rounded-md border-gray-800">Add Religion</button>
+              <button type="button" onClick={handleAddReligion} className="px-4 py-2 border rounded-md border-gray-800">Add Religion</button> */}
+
+
+              <select id="religion_status" className="w-full rounded-md focus:ring focus:ri focus:ri border-gray-300 text-gray-900" required>
+                <option>Buddhism</option>
+                <option>Christianity</option>
+                <option>Islam</option>
+                <option>Hinduism</option>
+                <option>Taoism</option>
+              </select>
             </div>
 
 
@@ -235,7 +285,7 @@ const AddMaids = () => {
             </div>
             <div className="col-span-full sm:col-span-2">
               <label className="text-sm">Nationality</label>
-              <input id="nationality" type="text" placeholder="Nationality" className="w-full rounded-md focus:ring focus:ri focus:ri border-gray-300 text-gray-900" required/>
+              <input id="nationality" type="text" placeholder="Nationality" className="w-full rounded-md focus:ring focus:ri focus:ri border-gray-300 text-gray-900" required />
             </div>
             <div className="col-span-full sm:col-span-2">
               <label className="text-sm">Languages</label>
@@ -276,7 +326,7 @@ const AddMaids = () => {
             </div>
             <div className="col-span-full">
               <label className="text-sm">Number of Children</label>
-              <input id="number_of_children" type="number" placeholder="Number of Children" className="w-full rounded-md focus:ring focus:ri focus:ri border-gray-300 text-gray-900" required/>
+              <input id="number_of_children" type="number" placeholder="Number of Children" className="w-full rounded-md focus:ring focus:ri focus:ri border-gray-300 text-gray-900" required />
             </div>
             <div className="col-span-full">
               <label className="text-sm">Age of Children</label>

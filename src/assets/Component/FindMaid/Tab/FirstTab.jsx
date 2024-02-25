@@ -3,9 +3,9 @@ import HeadlineForFirstTab from './Shared/HeadlineForFirstTab';
 
 const FirstTab = ({ data }) => {
 
-        const { marital_status, date_of_birth,age_of_children, home_address, place_of_birth, height, weight, education, religion, rest_day_preference, languages, nationality, number_of_children } = data;
+        const { marital_status,age, date_of_birth,age_of_children, home_address, place_of_birth, height, weight, education, religion, rest_day_preference, languages, nationality, number_of_children } = data;
   // console.log(data);
-  const age = new Date().getFullYear() - new Date(date_of_birth).getFullYear();
+  // const age = new Date().getFullYear() - new Date(date_of_birth).getFullYear();
   return (
     <section className='lg:flex m-4 mt-6 lg:space-x-12'>
 
