@@ -25,6 +25,8 @@ import DashboardHome from './assets/Pages/Admin/DashboardHome.jsx';
 import AllUsers from './assets/Pages/Admin/AllUsers.jsx';
 import AddUser from './assets/Pages/Admin/AddMaids.jsx';
 import AllMaids from './assets/Pages/Admin/AllMaids.jsx';
+import MaidEdit from './assets/Pages/Admin/MaidEdit.jsx';
+import FaqPage from './assets/Pages/FaqPage.jsx';
 
 
 
@@ -82,6 +84,12 @@ const router = createBrowserRouter([
           loader: () => fetch('http://localhost:5000/blogs')
 
         },
+        {
+          path: "/Blog/blog/:id",
+          element: <BlogDetails></BlogDetails>,
+          loader: () => fetch('http://localhost:5000/blogs')
+
+        },
         
         ,
         {
@@ -89,7 +97,11 @@ const router = createBrowserRouter([
           element: <BlogDetails></BlogDetails>,
           loader: () => fetch('http://localhost:5000/tips')
 
-        },
+        },{
+          path:"/faq",
+          element:<FaqPage></FaqPage>,
+          
+        }
         
         
 
@@ -125,7 +137,16 @@ const router = createBrowserRouter([
         path: "/dashboard/addUser",
         element: <AddUser></AddUser>,
         loader: () => fetch(`https://y-two-omega.vercel.app/users`)
-      }
+      },
+
+
+      {
+        path: "/dashboard/edit/:id",
+        element: <MaidEdit></MaidEdit>,
+        loader: () => fetch('http://localhost:5000/maids')
+
+      },
+
     ]
 
 

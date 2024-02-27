@@ -55,7 +55,7 @@ const ContactForm = () => {
             ))}
           </select>
         </div>
-        <button type="submit" className="w-full p-3 text-sm font-bold tracking-wider uppercase rounded bg-[#7CC23E] text-gray-50">Send Message</button>
+        <button type="submit" className="w-full p-3 text-sm font-bold tracking-wider uppercase rounded bg-[#065FB1] text-gray-50">Send Message</button>
       </form>
     </div>
   );

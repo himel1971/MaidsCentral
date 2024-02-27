@@ -119,6 +119,7 @@ const AddMaids = () => {
         experience_years: e.target.elements.experience_years.value,
         nationality: e.target.elements.nationality.value.toLowerCase(),
         languages: e.target.elements.languages.value.toLowerCase(),
+        Supplier: e.target.elements.Supplier.value.toLowerCase(),
         home_address: e.target.elements.home_address.value.toLowerCase(),
         number_of_children: e.target.elements.number_of_children.value,
         age_of_children: e.target.elements.age_of_children.value,
@@ -198,11 +199,7 @@ const AddMaids = () => {
                 <input id="picture" type="file" onChange={handleFileChange} className="w-full rounded-md focus:ring focus:ri focus:ri border-gray-300 text-gray-900" accept="image/*" required />
                 {imageUrl && <img src={imageUrl} alt="Preview" className="w-20 h-auto rounded-md border-gray-300 border" />}
               </div>
-            </div>
-            {/* <div className="col-span-full">
-              <label className="text-sm">Address</label>
-              <input id="address" type="text" placeholder="Address" className="w-full rounded-md focus:ring focus:ri focus:ri border-gray-300 text-gray-900" required />
-            </div> */}
+            </div>      
             <div className="col-span-full sm:col-span-2">
               <label className="text-sm">Date of Birth</label>
               <input id="date_of_birth" type="date" placeholder="Date of Birth" className="w-full rounded-md focus:ring focus:ri focus:ri border-gray-300 text-gray-900" required />
@@ -238,26 +235,7 @@ const AddMaids = () => {
 
 
             <div className="col-span-full">
-              <label className="text-sm">Religion</label> &nbsp;
-              {/* {religions.map((religion, index) => (
-                <div key={index}>
-                  <input
-                    type="text"
-                    placeholder="Religion"
-                    value={religion}
-                    onChange={(e) => {
-                      const updatedReligions = [...religions];
-                      updatedReligions[index] = e.target.value;
-                      setReligions(updatedReligions);
-                    }}
-                    className="w-full rounded-md focus:ring focus:ri focus:ri border-gray-300 text-gray-900" required
-                  />
-                  <button type="button" onClick={() => handleRemoveReligion(index)} className="px-4 py-2 border rounded-md border-gray-800">Remove Religion</button>
-                </div>
-              ))}
-              <button type="button" onClick={handleAddReligion} className="px-4 py-2 border rounded-md border-gray-800">Add Religion</button> */}
-
-
+              <label className="text-sm">Religion</label> &nbsp;          
               <select id="religion_status" className="w-full rounded-md focus:ring focus:ri focus:ri border-gray-300 text-gray-900" required>
                 <option>Buddhism</option>
                 <option>Christianity</option>
@@ -290,6 +268,10 @@ const AddMaids = () => {
             <div className="col-span-full sm:col-span-2">
               <label className="text-sm">Languages</label>
               <input id="languages" type="text" placeholder="Languages" className="w-full rounded-md focus:ring focus:ri focus:ri border-gray-300 text-gray-900" required />
+            </div>
+            <div className="col-span-full sm:col-span-2">
+              <label className="text-sm">Supplier</label>
+              <input id="Supplier" type="text" placeholder="Supplier" className="w-full rounded-md focus:ring focus:ri focus:ri border-gray-300 text-gray-900" required />
             </div>
 
 

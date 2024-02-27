@@ -49,7 +49,7 @@ const Registration = () => {
   
     signUp(email, password, username)
       .then(result => {
-        console.log(result);
+        // console.log(result);
   
         //Send Data To Backend Server
         const userData = {

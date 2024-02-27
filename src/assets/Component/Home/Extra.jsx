@@ -15,7 +15,7 @@ const Extra = () => {
           </h5>
 
           <div className=" w-full flex items-center">
-            <img src="../../../../public/images/eature/Untitled-design2-2.png" alt="section image" />
+            <img src="./images/eature/Untitled-design2-2.png" alt="section image" />
           </div>
         </div>
         <div className="grid gap-5 row-gap-5 sm:grid-cols-2">

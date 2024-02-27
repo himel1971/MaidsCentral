@@ -15,11 +15,12 @@ const Home2 = () => {
       {/* <Hero></Hero> */}
       <TopStories></TopStories>
       <Extra></Extra>
-      {/* <BlogSection></BlogSection> */}
+      <BlogSection></BlogSection>
       <Tips></Tips>
-      {/* <Grid></Grid> */}
+      <Grid></Grid>
       <Stats></Stats>
       <OurAgency></OurAgency>
+    
       {/* <HelperComponent></HelperComponent> */}
     </>
   )

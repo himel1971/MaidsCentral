@@ -17,7 +17,7 @@ const SignIn = () => {
             const { username, photoUrl, email } = result; // Make sure these values are available in the Google authentication result
 
             toast.success('Login Successful!');
-            console.log(result,photoUrl);
+            // console.log(result,photoUrl);
             handleLoginSuccess();
 
             const userData = {
@@ -40,11 +40,11 @@ const SignIn = () => {
                 .then(response => response.json())
                 .then(data => {
                     // Handle successful response from the backend if needed
-                    console.log('User data sent to the backend:', data);
+                    console.log('User data sent to the backend:');
                 })
                 .catch(error => {
                     // Handle error if the backend request fails
-                    console.error('Error sending user data to the backend:', error);
+                    console.error('Error sending user data to the backend:');
                 });
         });
     };

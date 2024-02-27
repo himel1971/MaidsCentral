@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
           <div className="lg:w-1/3">
             {/* LOGO  */}
-            <a rel="noopener noreferrer" href="#" className="flex justify-center space-x-3 lg:justify-start">
+            <a rel=" " href="#" className="flex justify-center space-x-3 lg:justify-start">
 
               <img
                 className=' w-64'
@@ -21,37 +21,25 @@ const Footer = () => {
 
             {/* LOGO  */}
           </div>
-          <div className="grid grid-cols-2 text-sm gap-x-3 gap-y-8 lg:w-2/3 sm:grid-cols-4">
+
+          <div className="grid grid-cols-2 text-sm gap-x-3 gap-y-10 lg:w-2/3 sm:grid-cols-4">
             <div className="space-y-3">
               <h3 className="tracking-wider  uppercase text-white">Get In Touch</h3>
               <ul className="space-y-1">
                 <li>
-                  <a rel="noopener noreferrer" href="#">Features</a>
+                  <a rel="noopener noreferrer" href="/">Home</a>
                 </li>
                 <li>
-                  <a rel="noopener noreferrer" href="#">Integrations</a>
+                  <a rel="noopener noreferrer" href="/about">About us</a>
                 </li>
                 <li>
-                  <a rel="noopener noreferrer" href="#">Pricing</a>
+                  <a rel="noopener noreferrer" href="/findmaids">Find maid</a>
                 </li>
                 <li>
-                  <a rel="noopener noreferrer" href="#">FAQ</a>
+                  <a rel="noopener noreferrer" href="/contact">Contact Us</a>
                 </li>
               </ul>
             </div>
-            <div className="space-y-3">
-              <h3 className="tracki uppercase text-white">Company</h3>
-              <ul className="space-y-1">
-                <li>
-                  <a rel="noopener noreferrer" href="#">Privacy</a>
-                </li>
-                <li>
-                  <a rel="noopener noreferrer" href="#">Terms of Service</a>
-                </li>
-              </ul>
-            </div>
-
-
 
 
 
@@ -60,33 +48,48 @@ const Footer = () => {
               <ul className="space-y-1">
                 <li>
                   <a className='text-[#00ADEE]' href="./Forms/POEA.pdf" download_>
-                  ◽  New Maid Arrival Transport & Administration
+                    ◽  New Maid Arrival Transport & Administration
                   </a>
                 </li>
                 <li>
 
                   <a className='text-[#00ADEE]' href="./Forms/OWWA.pdf" download_>
-                  ◽ Maid Home Leave Application
+                    ◽ Maid Home Leave Application
                   </a>
                 </li>
                 <li>
                   <a className='text-[#00ADEE]' >
-                  ◽ Maid Passport Renewal
+                    ◽ Maid Passport Renewal
                   </a>
 
                 </li>
               </ul>
             </div>
 
-
-
-
-
-
-
-
-
-
+            <div className="space-y-3">
+              <h3 className="tracking-wider  uppercase text-white">Useful Links</h3>
+              <ul className="space-y-1">
+                <li>
+                  <a rel="noopener noreferrer" href="https://www.mom.gov.sg/passes-and-permits/work-permit-for-foreign-domestic-worker/eligibility-and-requirements/employers-orientation-programme-eop">Employer Orientation Programme (EOP)</a>
+                </li>
+                <li>
+                  <a rel="noopener noreferrer" href="https://www.mom.gov.sg/">Ministry of Manpower</a>
+                </li>
+                <li>
+                  <a rel="noopener noreferrer" href="https://www.mom.gov.sg/passes-and-permits/work-permit-for-foreign-worker/foreign-worker-levy">CPF Board (Levy Section)</a>
+                </li>
+                <li>
+                  <a rel="noopener noreferrer" href="https://kemlu.go.id/singapore/en">Embassy of the Republic of Indonesia</a>
+                </li>
+                <li>
+                  <a rel="noopener noreferrer" href="http://www.myanmarembassy.sg/">Embassy of the Union of Myanmar</a>
+                </li>
+                <li>
+                  <a rel="noopener noreferrer" href="https://www.philippine-embassy.org.sg/">Embassy of the Philippines</a>
+                </li>
+              </ul>
+            </div>
+            
 
             <div className="space-y-3">
               <div className="uppercase text-gray-900">Social media</div>
@@ -108,13 +111,15 @@ const Footer = () => {
                 </a>
               </div>
             </div>
+
+
           </div>
         </div>
 
 
 
         <div className="py-6 text-sm text-center text-gray-300">
-        © 2024 Maids Central. All rights reserved. Designed By <a className='text-[#00ADEE]' href="#">Maria Mi.</a>
+          © 2024 Maids Central. All rights reserved. Designed By <a className='text-[#00ADEE] font-semibold' href="#">Creekmore.</a>
         </div>
 
 

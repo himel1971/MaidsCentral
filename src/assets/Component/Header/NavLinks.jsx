@@ -46,10 +46,10 @@ const NavLinks = () => {
 
 
   const myProfile = users.find(product => product.email === email);
-  console.log(myProfile);
+  // console.log(myProfile);
   const { type } = myProfile || {};
 
-  console.log(type);
+  // console.log(type);
 
 
 
@@ -114,6 +114,7 @@ const NavLinks = () => {
         </li>
 
       </>
+
       <li>
         <NavLink
           to="contact"
@@ -125,20 +126,45 @@ const NavLinks = () => {
         </NavLink>
       </li>
 
+      <li>
+        <NavLink
+          to="/faq"
+          className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "text-[#813f20]" : ""
+          }
+        >
+          FAQ
+        </NavLink>
+      </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       {user && type === "admin" && (
-          <li>
-            <NavLink
-              to="/dashboard"
-              className={
-                (isActive, isPending) =>
+        <li>
+          <NavLink
+            to="/dashboard"
+            className={
+              (isActive, isPending) =>
                 isPending ? "pending" : isActive ? "text-[#813f20]" : ""
-              }
-            >
-              Dashboard
-            </NavLink>
-          </li>
-        )}
+            }
+          >
+            Dashboard
+          </NavLink>
+        </li>
+      )}
 
 
 

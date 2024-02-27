@@ -4,8 +4,8 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import FirstTab from '../Component/FindMaid/Tab/FirstTab';
 import SecondTab from '../Component/FindMaid/Tab/SecondTab';
-import ThirdTab from '../Component/FindMaid/Tab/Thirdtab';
 import BookForm from '../Component/FindMaid/BookForm';
+import ThirdTab from '../Component/FindMaid/Tab/ThirdTab';
 
 
 
