@@ -6,7 +6,7 @@ const BlogSection = () => {
 
   useEffect(() => {
     // Assuming this is the API endpoint for getting blogs
-    fetch('http://localhost:5000/blogs')
+    fetch('https://maid-central-server-hvpt7kzb9-kazi-md-khorshed-alams-projects.vercel.app/blogs')
       .then((response) => response.json())
       .then((data) => setBlogs(data))
       .catch((error) => console.error('Error fetching blogs:', error));

@@ -134,7 +134,7 @@ const AddMaids = () => {
       };
 
       // Send a POST request to the backend
-      const response = await fetch('http://localhost:5000/maids', {
+      const response = await fetch('https://maid-central-server-hvpt7kzb9-kazi-md-khorshed-alams-projects.vercel.app/maids', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

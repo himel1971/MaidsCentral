@@ -16,7 +16,7 @@ const Layout = () => {
         // Simulate an asynchronous operation (e.g., fetching data)
         // Replace this with your actual async operation (e.g., fetching data from an API)
         const asyncOperation = async () => {
-            await new Promise((resolve) => setTimeout(resolve, 500)); // Simulate delay
+            await new Promise((resolve) => setTimeout(resolve, 1000)); // Simulate delay
 
             // After the async operation is completed, set isLoading to false
             setIsLoading(false);

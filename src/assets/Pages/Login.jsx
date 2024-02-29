@@ -49,18 +49,18 @@ const SignIn = () => {
         });
     };
 
-    const handleFacebook = () => {
-        facebookSignIN().then(result => {
-            toast.success('Login Successful!');
-            handleLoginSuccess()
-        })
-    }
-    const handelTwitter = () => {
-        twitterSignIN().then(result => {
-            toast.success('Login Successful!');
-            handleLoginSuccess()
-        })
-    }
+    // const handleFacebook = () => {
+    //     facebookSignIN().then(result => {
+    //         toast.success('Login Successful!');
+    //         handleLoginSuccess()
+    //     })
+    // }
+    // const handelTwitter = () => {
+    //     twitterSignIN().then(result => {
+    //         toast.success('Login Successful!');
+    //         handleLoginSuccess()
+    //     })
+    // }
 
 
 
@@ -102,10 +102,10 @@ const SignIn = () => {
     };
 
     return (
-        <section className="bg-[url(https://i.ibb.co/0XxfzSX/login.png)] bg-no-repeat bg-cover py-20 lg:py-[120px] font-rubik">
+        <section className="bg-[url(https://i.ibb.co/q0X7k22/login.png)] bg-no-repeat bg-cover py-20 lg:py-[120px] font-rubik">
             <div className="container ">
                 <div className="w-full px-4">
-                    <div className="relative mx-auto max-w-[525px] overflow-hidden rounded-lg bg-gray-300  py-16 px-10 text-center sm:px-12 md:px-[60px]">
+                    <div className="relative mx-auto max-w-[525px] overflow-hidden rounded-lg bg-white py-16 px-10 text-center sm:px-12 md:px-[60px]">
                         <div className="mb-10 text-center md:mb-16">
                             <Link className="mx-auto inline-block max-w-[660px]">
                                 <img
@@ -115,6 +115,7 @@ const SignIn = () => {
                                 />
 
                             </Link>
+                            <h1 className="uppercase">Login To Enjoy our full Feature</h1>
                         </div>
                         <form onSubmit={handleLogin}>
                             <InputBox type="email" name="email" placeholder="Email" />
@@ -126,17 +127,17 @@ const SignIn = () => {
 
                             <div className="mb-10">
                                 <button
-                                    className="border-[#065FB1] w-full font-medium cursor-pointer rounded-md border  py-3 px-5 text-black uppercase  transition bg-[#00ADEE] hover:bg-[#065FB1] hover:text-white"
+                                    className=" w-full font-medium cursor-pointer rounded-md border  py-3 px-5 text-white uppercase  transition bg-[#00ADEE] hover:bg-[#065FB1] hover:text-white"
                                     type="submit"
                                 >
                                     Sign In
                                 </button>
                             </div>
                         </form>
-                        <p className="mb-6 text-base text-black">Connect With</p>
+                        <p className="mb-6 text-base text-black">or Connect With</p>
                         <ul className="-mx-2 mb-12 flex justify-between">
                             {/* facebook */}
-                            <li className="w-full px-2">
+                            {/* <li className="w-full px-2">
                                 <Link
                                     onClick={handleFacebook}
                                     className="flex h-11 items-center justify-center rounded-md bg-[#4064AC] hover:bg-opacity-90"
@@ -155,9 +156,9 @@ const SignIn = () => {
                                         />
                                     </svg>
                                 </Link>
-                            </li>
+                            </li> */}
                             {/* twitter */}
-                            <li className="w-full px-2">
+                            {/* <li className="w-full px-2">
                                 <Link
                                     onClick={handelTwitter}
                                     className="flex h-11 items-center justify-center rounded-md bg-[#1C9CEA] hover:bg-opacity-90"
@@ -175,12 +176,12 @@ const SignIn = () => {
                                         />
                                     </svg>
                                 </Link>
-                            </li>
+                            </li> */}
                             {/* google */}
                             <li className="w-full px-2">
                                 <Link
                                     onClick={handelGooglePopup}
-                                    className="flex h-11 items-center justify-center rounded-md bg-[#D64937] hover:bg-opacity-90"
+                                    className="flex h-11 items-center justify-center rounded-md bg-[#D64937] hover:bg-opacity-90 text-white font-medium"
                                 >
                                     <svg
                                         width="18"
@@ -200,7 +201,7 @@ const SignIn = () => {
                        
                         <p className="text-base text-black">
                             Not a member yet?
-                            <NavLink to="/registration" className="text-[#065FB1] font-medium hover:underline">
+                            <NavLink to="/register" className="text-[#00ADEE] font-medium hover:underline">
                                 &nbsp; Sign Up
                             </NavLink>
                         </p>

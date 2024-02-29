@@ -89,9 +89,11 @@ const FindMaids = () => {
       {/* Filter buttons */}
       <div className="flex flex-col space-y-5 mb-8">
         {/* Marital Status filter */}
-        <div className='flex items-center space-x-5'>
-          <h1 className='text-[#065FB1] font-bold uppercase'>Marital Status:</h1>
-          <FilterButtons options={maritalStatuses} selectedOption={filters.maritalStatus} onSelect={status => setFilters({ ...filters, maritalStatus: status })} />
+        <div className="flex items-center space-x-5">
+          <h1 className="text-[#065FB1] font-bold uppercase">Marital Status:</h1>
+         
+            <FilterButtons options={maritalStatuses} selectedOption={filters.maritalStatus} onSelect={status => setFilters({ ...filters, maritalStatus: status })} />
+         
         </div>
 
         {/* Age filter */}
@@ -120,7 +122,7 @@ const FindMaids = () => {
         {/* Reset Filters button */}
         <div className="flex items-center">
           {/* {filters.skills.length > 0 && <p>Filters Applied: {filters.skills.join(', ')}</p>} */}
-          <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-mg" onClick={resetFilters}>Reset Filters</button>
+          <button className="btn btn-warning btn-xs sm:btn-sm md:btn-md lg:btn-mg" onClick={resetFilters}>Reset Filters</button>
         </div>
       </div>
 

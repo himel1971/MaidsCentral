@@ -19,7 +19,7 @@ const AllUsers = () => {
             searchName && `name_like=${searchName}`
         ].filter(Boolean).join('&');
 
-        fetch(`http://localhost:5000/users?${queryParams}`)
+        fetch(`https://maid-central-server-hvpt7kzb9-kazi-md-khorshed-alams-projects.vercel.app/users?${queryParams}`)
             .then(response => response.json())
             .then(data => setUsers(data))
             .catch(error => console.error('Error fetching users:', error));
@@ -28,7 +28,7 @@ const AllUsers = () => {
     const handleMakeUser = (_id) => {
         const updateUser = { type: 'user' };
 
-        fetch(`http://localhost:5000/users/${_id}`, {
+        fetch(`https://maid-central-server-hvpt7kzb9-kazi-md-khorshed-alams-projects.vercel.app/users/${_id}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'
@@ -53,7 +53,7 @@ const AllUsers = () => {
     const handleMakeAdmin = (_id) => {
         const updateUser = { type: 'admin' };
 
-        fetch(`http://localhost:5000/users/${_id}`, {
+        fetch(`https://maid-central-server-hvpt7kzb9-kazi-md-khorshed-alams-projects.vercel.app/users/${_id}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'

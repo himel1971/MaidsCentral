@@ -6,11 +6,11 @@ const DashboardHome = () => {
   const [admin, setAdmin] = useState(null);
 
   useEffect(() => {
-    fetch('http://localhost:5000/maids')
+    fetch('https://maid-central-server-hvpt7kzb9-kazi-md-khorshed-alams-projects.vercel.app/maids')
       .then(response => response.json())
       .then(data => setMaids(data));
 
-    fetch('http://localhost:5000/users')
+    fetch('https://maid-central-server-hvpt7kzb9-kazi-md-khorshed-alams-projects.vercel.app/users')
       .then(response => response.json())
       .then(data => setUsers(data));
   }, []);

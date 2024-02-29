@@ -1,27 +1,22 @@
 import React from 'react'
-import Hero from '../Component/Home/Hero'
 import TopStories from '../Component/Home/TopStories'
 import Tips from './Tips'
 import Stats from '../Component/Home/Stats'
 import OurAgency from '../Component/Home/OurAgency'
-import Extra from '../Component/Home/Extra'
-import BlogSection from '../Component/Home/Blog/BlogSection'
-import Grid from '../Component/Home/Grid'
-import HelperComponent from '../Component/Home/HelperComponent'
+import TipsSection from '../Component/Home/Blog/TipsSection'
+import OurMission from '../Component/Home/OurMission'
 
 const Home2 = () => {
   return (
     <>
-      {/* <Hero></Hero> */}
+      
       <TopStories></TopStories>
-      <Extra></Extra>
-      <BlogSection></BlogSection>
-      <Tips></Tips>
-      <Grid></Grid>
+      {/* <TipsSection></TipsSection> */}
       <Stats></Stats>
+      <Tips></Tips>
+      <OurMission></OurMission>
       <OurAgency></OurAgency>
     
-      {/* <HelperComponent></HelperComponent> */}
     </>
   )
 }

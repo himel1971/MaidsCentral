@@ -19,7 +19,7 @@ const NavLinks = () => {
     const fetchData = async () => {
       try {
 
-        const response = await fetch('http://localhost:5000/users');
+        const response = await fetch('https://maid-central-server-hvpt7kzb9-kazi-md-khorshed-alams-projects.vercel.app/users');
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
@@ -90,6 +90,16 @@ const NavLinks = () => {
             }
           >
             About
+          </NavLink>
+        </li>
+        <li key="service">
+          <NavLink
+            to="/service"
+            className={({ isActive, isPending }) =>
+              isPending ? "pending" : isActive ? "text-[#813f20]" : ""
+            }
+          >
+           Service
           </NavLink>
         </li>
         <li>
@@ -185,7 +195,7 @@ const NavLinks = () => {
           Login
         </NavLink>
         <NavLink
-          to="/registration"
+          to="/register"
           className={({ isActive, isPending }) =>
             isPending ? "pending" : isActive ? "text-[#813f20]" : ""
           }

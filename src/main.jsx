@@ -27,6 +27,9 @@ import AddUser from './assets/Pages/Admin/AddMaids.jsx';
 import AllMaids from './assets/Pages/Admin/AllMaids.jsx';
 import MaidEdit from './assets/Pages/Admin/MaidEdit.jsx';
 import FaqPage from './assets/Pages/FaqPage.jsx';
+import AskGPT from './assets/Pages/AskGPT.jsx';
+import Service from './assets/Pages/Service.jsx';
+import PrivateRouter from './assets/Config/PrivateRouter.jsx';
 
 
 
@@ -47,6 +50,11 @@ const router = createBrowserRouter([
           path: "/contact",
           element: <Contact></Contact>
         },
+        
+        {
+          path: "/service",
+          element: <Service></Service>
+        },
         {
           path: "/about",
           element: <About></About>
@@ -54,7 +62,7 @@ const router = createBrowserRouter([
         {
           path: "/findmaids",
           element: <FindMaids></FindMaids>,
-          loader: () => fetch('http://localhost:5000/maids')
+          loader: () => fetch('https://maid-central-server-hvpt7kzb9-kazi-md-khorshed-alams-projects.vercel.app/maids')
 
         },
         {
@@ -68,46 +76,42 @@ const router = createBrowserRouter([
         },
         {
           path: "/maid/:id",
-          element: <SingleMaidData></SingleMaidData>,
-          loader: () => fetch('http://localhost:5000/maids')
+          element: <PrivateRouter><SingleMaidData></SingleMaidData></PrivateRouter>,
+          loader: () => fetch('https://maid-central-server-hvpt7kzb9-kazi-md-khorshed-alams-projects.vercel.app/maids')
 
         },
 
         {
           path: "/blog",
           element: <Blog></Blog>,
-          loader: () => ('http://localhost:5000/blogs')
+          loader: () => ('https://maid-central-server-hvpt7kzb9-kazi-md-khorshed-alams-projects.vercel.app/blogs')
         },
         {
           path: "/blog/:id",
           element: <BlogDetails></BlogDetails>,
-          loader: () => fetch('http://localhost:5000/blogs')
+          loader: () => fetch('https://maid-central-server-hvpt7kzb9-kazi-md-khorshed-alams-projects.vercel.app/blogs')
 
         },
         {
           path: "/Blog/blog/:id",
           element: <BlogDetails></BlogDetails>,
-          loader: () => fetch('http://localhost:5000/blogs')
+          loader: () => fetch('https://maid-central-server-hvpt7kzb9-kazi-md-khorshed-alams-projects.vercel.app/blogs')
 
         },
-        
+
         ,
         {
           path: "/tips/:id",
           element: <BlogDetails></BlogDetails>,
-          loader: () => fetch('http://localhost:5000/tips')
+          loader: () => fetch('https://maid-central-server-hvpt7kzb9-kazi-md-khorshed-alams-projects.vercel.app/tips')
 
-        },{
-          path:"/faq",
-          element:<FaqPage></FaqPage>,
-          
+        },
+        {
+          path: "/faq",
+          element: <FaqPage></FaqPage>,
+
         }
         
-        
-
-
-
-
 
 
 
@@ -126,12 +130,12 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/allMaids",
         element: <AllMaids></AllMaids>,
-        loader: () => fetch(`http://localhost:5000/maids`)
+        loader: () => fetch(`https://maid-central-server-hvpt7kzb9-kazi-md-khorshed-alams-projects.vercel.app/maids`)
       },
       {
         path: "/dashboard/users",
         element: <AllUsers></AllUsers>,
-        loader: () => fetch(`http://localhost:5000/users`)
+        loader: () => fetch(`https://maid-central-server-hvpt7kzb9-kazi-md-khorshed-alams-projects.vercel.app/users`)
       },
       {
         path: "/dashboard/addUser",
@@ -143,7 +147,7 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/edit/:id",
         element: <MaidEdit></MaidEdit>,
-        loader: () => fetch('http://localhost:5000/maids')
+        loader: () => fetch('https://maid-central-server-hvpt7kzb9-kazi-md-khorshed-alams-projects.vercel.app/maids')
 
       },
 

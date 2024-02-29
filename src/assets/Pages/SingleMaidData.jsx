@@ -13,11 +13,8 @@ const SingleMaidData = () => {
     const { id } = useParams();
     const allMaids = useLoaderData();
     const maid = allMaids.find(maid => maid._id == id);
-    const { name, date_of_birth, height, weight, experience_years, picture_url } = maid;
-    // console.log(id);
-    // console.log(allMaids);
-    // console.log(maid);
-
+    const { name, date_of_birth, height, weight, bio, experience_years, picture_url } = maid;
+   
     return (
         <section className='container lg:flex justify-between mx-auto my-16'>
             <div className='lg:w-[65%] border p-10 rounded-lg'>
@@ -27,13 +24,13 @@ const SingleMaidData = () => {
 
                     <div className="avatar ">
                         <div className="w-40  mask mask-squircle">
-                            <img src={picture_url} alt="" />
+                            <img src={picture_url} alt="Maids-Images" />
                         </div>
                     </div>
                     <div className='lg:flex'>
                         <div className='mt-2'>
                             <h1 className='font-bold text-4xl cSecondary uppercase'>{name}</h1>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, quas.</p>
+                            <p>{bio? bio : <>Experienced, dedicated, and trustworthy - our maids at Maids Central ensure your home is clean, organized, and maintained with care.</>}</p>
                         </div>
 
                         

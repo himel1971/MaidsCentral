@@ -9,7 +9,7 @@ const AllMaids = () => {
 
   const fetchUsers = async (searchQuery = '') => {
     try {
-      const URL = `http://localhost:5000/maids?name=${searchQuery}`;
+      const URL = `https://maid-central-server-hvpt7kzb9-kazi-md-khorshed-alams-projects.vercel.app/maids?name=${searchQuery}`;
       const response = await fetch(URL);
       const data = await response.json();
       setUsers(data);
@@ -35,7 +35,7 @@ const AllMaids = () => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          const URL = `http://localhost:5000/maids/${_id}`;
+          const URL = `https://maid-central-server-hvpt7kzb9-kazi-md-khorshed-alams-projects.vercel.app/maids/${_id}`;
           const response = await fetch(URL, {
             method: 'DELETE',
           });
