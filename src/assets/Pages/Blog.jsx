@@ -9,7 +9,7 @@ const Blog = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch('https://maid-central-server-hvpt7kzb9-kazi-md-khorshed-alams-projects.vercel.app/blogs')
+    fetch('https://maid-central-server-npw1g5hho-kazi-md-khorshed-alams-projects.vercel.app/blogs')
       .then((response) => {
         if (!response.ok) {
           throw new Error('Network response was not ok');

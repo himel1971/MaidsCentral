@@ -9,7 +9,7 @@ const TopStories = () => {
 
 
     useEffect(() => {
-        fetch('https://maid-central-server-hvpt7kzb9-kazi-md-khorshed-alams-projects.vercel.app/blogs')
+        fetch('https://maid-central-server-npw1g5hho-kazi-md-khorshed-alams-projects.vercel.app/blogs')
             .then((response) => response.json())
             .then((data) => {
                 // Filter the articles by their type being 'blog'

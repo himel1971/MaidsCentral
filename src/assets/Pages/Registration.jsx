@@ -59,7 +59,7 @@ const Registration = () => {
           type: "user"
         };
 
-        const backendApiEndpoint = 'https://maid-central-server-hvpt7kzb9-kazi-md-khorshed-alams-projects.vercel.app/users';
+        const backendApiEndpoint = 'https://maid-central-server-npw1g5hho-kazi-md-khorshed-alams-projects.vercel.app/users';
 
         fetch(backendApiEndpoint, {
           method: 'POST',

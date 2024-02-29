@@ -19,7 +19,7 @@ const NavLinks = () => {
     const fetchData = async () => {
       try {
 
-        const response = await fetch('https://maid-central-server-hvpt7kzb9-kazi-md-khorshed-alams-projects.vercel.app/users');
+        const response = await fetch('https://maid-central-server-npw1g5hho-kazi-md-khorshed-alams-projects.vercel.app/users');
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }

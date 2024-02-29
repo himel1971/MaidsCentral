@@ -11,7 +11,7 @@ const AskGPT = () => {
 
   const handleAskQuestion = async () => {
     try {
-      const response = await fetch('https://maid-central-server-hvpt7kzb9-kazi-md-khorshed-alams-projects.vercel.app/ask-chatgpt', {
+      const response = await fetch('https://maid-central-server-npw1g5hho-kazi-md-khorshed-alams-projects.vercel.app/ask-chatgpt', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

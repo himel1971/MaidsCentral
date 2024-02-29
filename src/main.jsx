@@ -62,7 +62,7 @@ const router = createBrowserRouter([
         {
           path: "/findmaids",
           element: <FindMaids></FindMaids>,
-          loader: () => fetch('https://maid-central-server-hvpt7kzb9-kazi-md-khorshed-alams-projects.vercel.app/maids')
+          loader: () => fetch('https://maid-central-server-npw1g5hho-kazi-md-khorshed-alams-projects.vercel.app/maids')
 
         },
         {
@@ -77,25 +77,25 @@ const router = createBrowserRouter([
         {
           path: "/maid/:id",
           element: <PrivateRouter><SingleMaidData></SingleMaidData></PrivateRouter>,
-          loader: () => fetch('https://maid-central-server-hvpt7kzb9-kazi-md-khorshed-alams-projects.vercel.app/maids')
+          loader: () => fetch('https://maid-central-server-npw1g5hho-kazi-md-khorshed-alams-projects.vercel.app/maids')
 
         },
 
         {
           path: "/blog",
           element: <Blog></Blog>,
-          loader: () => ('https://maid-central-server-hvpt7kzb9-kazi-md-khorshed-alams-projects.vercel.app/blogs')
+          loader: () => ('https://maid-central-server-npw1g5hho-kazi-md-khorshed-alams-projects.vercel.app/blogs')
         },
         {
           path: "/blog/:id",
           element: <BlogDetails></BlogDetails>,
-          loader: () => fetch('https://maid-central-server-hvpt7kzb9-kazi-md-khorshed-alams-projects.vercel.app/blogs')
+          loader: () => fetch('https://maid-central-server-npw1g5hho-kazi-md-khorshed-alams-projects.vercel.app/blogs')
 
         },
         {
           path: "/Blog/blog/:id",
           element: <BlogDetails></BlogDetails>,
-          loader: () => fetch('https://maid-central-server-hvpt7kzb9-kazi-md-khorshed-alams-projects.vercel.app/blogs')
+          loader: () => fetch('https://maid-central-server-npw1g5hho-kazi-md-khorshed-alams-projects.vercel.app/blogs')
 
         },
 
@@ -103,7 +103,7 @@ const router = createBrowserRouter([
         {
           path: "/tips/:id",
           element: <BlogDetails></BlogDetails>,
-          loader: () => fetch('https://maid-central-server-hvpt7kzb9-kazi-md-khorshed-alams-projects.vercel.app/tips')
+          loader: () => fetch('https://maid-central-server-npw1g5hho-kazi-md-khorshed-alams-projects.vercel.app/tips')
 
         },
         {
@@ -125,29 +125,28 @@ const router = createBrowserRouter([
       {
         path: "/dashboard",
         element: <DashboardHome></DashboardHome>,
-        loader: () => fetch(`https://y-two-omega.vercel.app/parcel`)
       },
       {
         path: "/dashboard/allMaids",
         element: <AllMaids></AllMaids>,
-        loader: () => fetch(`https://maid-central-server-hvpt7kzb9-kazi-md-khorshed-alams-projects.vercel.app/maids`)
+        loader: () => fetch(`https://maid-central-server-npw1g5hho-kazi-md-khorshed-alams-projects.vercel.app/maids`)
       },
       {
         path: "/dashboard/users",
         element: <AllUsers></AllUsers>,
-        loader: () => fetch(`https://maid-central-server-hvpt7kzb9-kazi-md-khorshed-alams-projects.vercel.app/users`)
+        loader: () => fetch(`https://maid-central-server-npw1g5hho-kazi-md-khorshed-alams-projects.vercel.app/users`)
+        
       },
       {
         path: "/dashboard/addUser",
         element: <AddUser></AddUser>,
-        loader: () => fetch(`https://y-two-omega.vercel.app/users`)
       },
 
 
       {
         path: "/dashboard/edit/:id",
         element: <MaidEdit></MaidEdit>,
-        loader: () => fetch('https://maid-central-server-hvpt7kzb9-kazi-md-khorshed-alams-projects.vercel.app/maids')
+        loader: () => fetch('https://maid-central-server-npw1g5hho-kazi-md-khorshed-alams-projects.vercel.app/maids')
 
       },
 
