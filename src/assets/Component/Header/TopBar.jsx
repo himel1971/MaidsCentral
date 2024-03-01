@@ -3,7 +3,7 @@ import PhoneTopBarName from './SharedTopbar/PhoneTopBarName'; // Assuming this i
 
 const TopBar = () => {
     return (
-        <div className='bg-[#00ADEE] h-[4vh] hidden md:block'>
+        <div className='bg-[#00ADEE] h-[4vh] hidden lg:block'>
             <div className='container mx-auto flex text-white justify-between items-center h-full'>
                 <div className='flex justify-between items-center h-full w-1/2 '>
                     <PhoneTopBarName name="HENNI " number=" 9274 1810 " />|

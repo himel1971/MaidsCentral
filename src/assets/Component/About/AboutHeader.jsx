@@ -3,7 +3,7 @@ import React from 'react'
 const AboutHeader = () => {
     return (
         <section
-            className="relative h-[90vh] bg-[url(/images/Home/hero4.png)] bg-cover bg-center bg-no-repeat"
+            className="relative h-[90vh] bg-[url(/images/Home/hero4.png)] bg-cover  lg:bg-center bg-no-repeat"
         >
 
             <div

@@ -99,7 +99,7 @@ const NavLinks = () => {
               isPending ? "pending" : isActive ? "text-[#813f20]" : ""
             }
           >
-           Service
+            Service
           </NavLink>
         </li>
         <li>
@@ -186,22 +186,31 @@ const NavLinks = () => {
 
 
       <li className="md:hidden ">
-        <NavLink
-          to="/login"
-          className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "text-[#813f20]" : ""
-          }
-        >
-          Login
-        </NavLink>
-        <NavLink
-          to="/register"
-          className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "text-[#813f20]" : ""
-          }
-        >
-          Registration
-        </NavLink>
+        {
+          !user ?
+            <> <NavLink
+              to="/login"
+              className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "text-[#813f20]" : ""
+              }
+            >
+              Login
+            </NavLink>
+              <NavLink
+                to="/register"
+                className={({ isActive, isPending }) =>
+                  isPending ? "pending" : isActive ? "text-[#813f20]" : ""
+                }
+              >
+                Registration
+              </NavLink></>
+            :
+            <></>
+        }
+
+
+
+
       </li>
     </>
   );
