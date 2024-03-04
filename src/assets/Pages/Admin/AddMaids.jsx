@@ -186,7 +186,9 @@ const AddMaids = () => {
         <fieldset className="grid grid-cols-4 gap-6 p-6 rounded-md shadow-sm bg-gray-50">
           <div className="space-y-2 col-span-full lg:col-span-1">
             <p className="font-medium">Add Maid Information</p>
-            <p className="text-xs">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci fuga autem eum!</p>
+            <p className="text-xs capitalize">
+              fill the form with maid data. please be careful with data . if fill wrong you have delete data or edit some inputs. so Fill right data on first time.
+            </p>
           </div>
           <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
             <div className="col-span-full sm:col-span-3">
@@ -199,7 +201,7 @@ const AddMaids = () => {
                 <input id="picture" type="file" onChange={handleFileChange} className="w-full rounded-md focus:ring focus:ri focus:ri border-gray-300 text-gray-900" accept="image/*" required />
                 {imageUrl && <img src={imageUrl} alt="Preview" className="w-20 h-auto rounded-md border-gray-300 border" />}
               </div>
-            </div>      
+            </div>
             <div className="col-span-full sm:col-span-2">
               <label className="text-sm">Date of Birth</label>
               <input id="date_of_birth" type="date" placeholder="Date of Birth" className="w-full rounded-md focus:ring focus:ri focus:ri border-gray-300 text-gray-900" required />
@@ -235,7 +237,7 @@ const AddMaids = () => {
 
 
             <div className="col-span-full">
-              <label className="text-sm">Religion</label> &nbsp;          
+              <label className="text-sm">Religion</label> &nbsp;
               <select id="religion_status" className="w-full rounded-md focus:ring focus:ri focus:ri border-gray-300 text-gray-900" required>
                 <option>Buddhism</option>
                 <option>Christianity</option>

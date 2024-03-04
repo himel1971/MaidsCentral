@@ -14,7 +14,7 @@ const TopBar = () => {
 
                 {/* Rendering email link with an icon */}
                 <div className='flex justify-around items-center justify-evenly'>
-                    <img src="images/icons/mail.png" className='h-8' alt="mail" />
+                    <img src="https://i.ibb.co/2jRnsM6/mail.png" className='h-8' alt="mail" />
                     <a href="mailto:info.maidsc@gmail.com">info.maidsc@gmail.com</a>
                 </div>
             </div>

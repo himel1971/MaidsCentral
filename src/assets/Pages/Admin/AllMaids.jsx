@@ -69,7 +69,7 @@ const AllMaids = () => {
     <div>
       <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
         <div className="flex justify-between items-center p-5">
-          <h1 className="text-lg font-semibold text-black dark:text-white">All Users</h1>
+          <h1 className="text-lg font-semibold text-black dark:text-white">All Maids</h1>
           <div className="flex items-center space-x-4">
             <input
               type="text"
@@ -92,6 +92,7 @@ const AllMaids = () => {
               <th scope="col" className="px-6 py-3">Image</th>
               <th scope="col" className="px-6 py-3">Name</th>
               <th scope="col" className="px-6 py-3">Nationality</th>
+              <th scope="col" className="px-6 py-3">Supplier</th>
               <th scope="col" className="px-6 py-3">Religion</th>
               <th scope="col" className="px-6 py-3"></th>
             </tr>
@@ -104,6 +105,7 @@ const AllMaids = () => {
                 </td>
                 <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">{user.name}</th>
                 <td className="px-6 py-4">{user.nationality}</td>
+                <td className="px-6 py-4">{user.Supplier?user.Supplier:<>NaN</> }</td>
                 <td className="px-6 py-4">{user.religion}</td>
                 <td className="px-6 py-4 text-right">
 

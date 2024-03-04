@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 import { Link } from 'react-router-dom';
+import Swal from "sweetalert2";
 
 const AllUsers = () => {
     const [users, setUsers] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [perPage] = useState(20);
     const [searchName, setSearchName] = useState('');
+    const [filteredUsers, setFilteredUsers] = useState([]);
+    const [allUsers, setAllUsers] = useState(true);
 
     useEffect(() => {
         fetchUsers();
@@ -21,57 +24,90 @@ const AllUsers = () => {
 
         fetch(`https://maid-central-server-npw1g5hho-kazi-md-khorshed-alams-projects.vercel.app/users?${queryParams}`)
             .then(response => response.json())
-            .then(data => setUsers(data))
+            .then(data => {
+                setUsers(data);
+                if (allUsers) setFilteredUsers(data);
+            })
             .catch(error => console.error('Error fetching users:', error));
     };
 
     const handleMakeUser = (_id) => {
-        const updateUser = { type: 'user' };
+        Swal.fire({
+            title: "Do you want to make this user a regular user?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, make them a regular user!",
+            cancelButtonText: "No"
+        }).then(async (result) => {
+            if (result.isConfirmed) {
+                // Wrap the existing code in the then block of the Swal.fire call
+                try {
+                    const updateUser = { type: 'user' };
 
-        fetch(`https://maid-central-server-npw1g5hho-kazi-md-khorshed-alams-projects.vercel.app/users/${_id}`, {
-            method: 'PATCH',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(updateUser)
-        })
-        .then(res => res.json())
-        .then(data => {
-            if (data.modifiedCount > 0) {
-                toast.success('User type successfully updated');
-                fetchUsers();
+                    const response = await fetch(`https://maid-central-server-npw1g5hho-kazi-md-khorshed-alams-projects.vercel.app/users/${_id}`, {
+                        method: 'PATCH',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(updateUser)
+                    });
+
+                    const data = await response.json();
+                    if (data.modifiedCount > 0) {
+                        toast.success('User type successfully updated');
+                        fetchUsers(); // Assuming fetchUsers() fetches and updates the user list
+                    } else {
+                        toast.error('Failed to update user type');
+                    }
+                } catch (error) {
+                    console.error('Error updating user type:', error);
+                    toast.error('Failed to update user type');
+                }
             } else {
-                toast.error('Failed to update user type');
+                toast.warning('Operation Canceled');
             }
-        })
-        .catch(error => {
-            console.error('Error updating user type:', error);
-            toast.error('Failed to update user type');
         });
     };
 
     const handleMakeAdmin = (_id) => {
-        const updateUser = { type: 'admin' };
+        Swal.fire({
+            title: "Do you want to make this user an admin?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, make them an admin!",
+            cancelButtonText: "No"
+        }).then(async (result) => {
+            if (result.isConfirmed) {
+                // Wrap the existing code in the then block of the Swal.fire call
+                try {
+                    const updateUser = { type: 'admin' };
 
-        fetch(`https://maid-central-server-npw1g5hho-kazi-md-khorshed-alams-projects.vercel.app/users/${_id}`, {
-            method: 'PATCH',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(updateUser)
-        })
-        .then(res => res.json())
-        .then(data => {
-            if (data.modifiedCount > 0) {
-                toast.success('User type successfully updated');
-                fetchUsers();
+                    const response = await fetch(`https://maid-central-server-npw1g5hho-kazi-md-khorshed-alams-projects.vercel.app/users/${_id}`, {
+                        method: 'PATCH',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(updateUser)
+                    });
+
+                    const data = await response.json();
+                    if (data.modifiedCount > 0) {
+                        toast.success('User type successfully updated');
+                        fetchUsers(); // Assuming fetchUsers() fetches and updates the user list
+                    } else {
+                        toast.error('Failed to update user type');
+                    }
+                } catch (error) {
+                    console.error('Error making user an admin:', error);
+                    toast.error('Failed to make user an admin');
+                }
             } else {
-                toast.error('Failed to update user type');
+                toast.warning('Operation Canceled');
             }
-        })
-        .catch(error => {
-            console.error('Error updating user type:', error);
-            toast.error('Failed to update user type');
         });
     };
 
@@ -79,11 +115,26 @@ const AllUsers = () => {
         setSearchName(e.target.value);
     };
 
+    const filterUsers = (type) => {
+        if (type === 'all') {
+            setFilteredUsers(users);
+            setAllUsers(true);
+        } else {
+            setFilteredUsers(users.filter((user) => user.type === type));
+            setAllUsers(false);
+        }
+    };
+
     return (
         <div>
             <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
                 <div className="flex justify-between items-center p-5">
                     <h1 className="text-lg font-semibold text-black dark:text-white">All Users</h1>
+                    <div>
+                        <button onClick={() => filterUsers('all')} className="mr-2 font-medium text-gray-800 dark:text-gray-300 bg-gray-100 dark:bg-gray-700 py-1 px-3 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition duration-300">All Users</button>
+                        <button onClick={() => filterUsers('user')} className="mr-2 font-medium text-gray-800 dark:text-gray-300 bg-gray-100 dark:bg-gray-700 py-1 px-3 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition duration-300">Regular Users</button>
+                        <button onClick={() => filterUsers('admin')} className="font-medium text-gray-800 dark:text-gray-300 bg-gray-100 dark:bg-gray-700 py-1 px-3 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition duration-300">Admins</button>
+                    </div>
                     <div className="flex items-center space-x-4">
                         <input type="text" placeholder="Search by name" className="border-gray-300 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-300 px-3 py-1 rounded-lg" value={searchName} onChange={handleSearchNameChange} />
                         <button className="bg-blue-500 dark:bg-blue-700 text-white px-3 py-1 rounded-lg" onClick={() => fetchUsers()}>Search</button>
@@ -103,7 +154,7 @@ const AllUsers = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {users.map(user => (
+                        {filteredUsers.map(user => (
                             <tr key={user._id} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                                 <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">{user.name}</th>
                                 <td className="px-6 py-4">{user.phone}</td>

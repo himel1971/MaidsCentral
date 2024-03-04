@@ -119,7 +119,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/dashboard",
-    element: <Dashboard></Dashboard>,
+    element: <PrivateRouter><Dashboard></Dashboard></PrivateRouter>,
     errorElement: <Error></Error>,
     children: [
       {
@@ -141,8 +141,6 @@ const router = createBrowserRouter([
         path: "/dashboard/addUser",
         element: <AddUser></AddUser>,
       },
-
-
       {
         path: "/dashboard/edit/:id",
         element: <MaidEdit></MaidEdit>,
