@@ -49,13 +49,19 @@ const FindMaids = () => {
   };
 
   // Filtered maids based on selected criteria
-  const filteredMaids = maids.filter(filterMaids);
+  
 
   // Pagination
-  const indexOfLastMaid = currentPage * maidsPerPage;
-  const indexOfFirstMaid = indexOfLastMaid - maidsPerPage;
-  const currentMaids = filteredMaids.slice(indexOfFirstMaid, indexOfLastMaid);
+// Reverse the order of maids before filtering
+const reversedMaids = maids.slice().reverse();
 
+// Filtered maids based on selected criteria
+const filteredMaids = reversedMaids.filter(filterMaids);
+
+// Pagination
+const indexOfLastMaid = currentPage * maidsPerPage;
+const indexOfFirstMaid = indexOfLastMaid - maidsPerPage;
+const currentMaids = filteredMaids.slice(indexOfFirstMaid, indexOfLastMaid);
   // Function to reset filters
   const resetFilters = () => {
     setFilters({

@@ -102,7 +102,7 @@ const Registration = () => {
       <section className=" container mx-auto">
         <div className=" lg:grid lg:min-h-screen grid-cols-1 lg:grid-cols-12">
           <aside
-            className="relative hidden sm:block md:display block h-16 lg:order-last lg:col-span-5 lg:h-full xl:col-span-6"
+            className="relative sm:block md:display block h-16 lg:order-last lg:col-span-5 lg:h-full xl:col-span-6"
           >
             <img
               alt="Pattern"
@@ -218,7 +218,7 @@ const Registration = () => {
 
                 <div className="col-span-6 sm:flex sm:items-center sm:gap-4">
                   <button
-                    className="inline-block shrink-0 rounded-md border  bg-[#065FB1] px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:bg-[#00ADEE] focus:outline-none focus:ring active:text-rose-500"
+                    className="inline-block shrink-0 rounded-md border  bg-[#065FB1] px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:bg-[#00ADEE] hover:text-black  focus:outline-none focus:ring active:text-rose-500"
                   >
                     Create an account
                   </button>

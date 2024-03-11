@@ -7,19 +7,18 @@ const AllUsers = () => {
     const [users, setUsers] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [perPage] = useState(20);
-    const [searchName, setSearchName] = useState('');
+    const [searchEmail, setSearchEmail] = useState('');
     const [filteredUsers, setFilteredUsers] = useState([]);
     const [allUsers, setAllUsers] = useState(true);
 
     useEffect(() => {
         fetchUsers();
-    }, [currentPage, perPage, searchName]);
+    }, [currentPage, perPage, searchEmail]);
 
     const fetchUsers = () => {
         const queryParams = [
             `_page=${currentPage}`,
             `_limit=${perPage}`,
-            searchName && `name_like=${searchName}`
         ].filter(Boolean).join('&');
 
         fetch(`https://maid-central-server-npw1g5hho-kazi-md-khorshed-alams-projects.vercel.app/users?${queryParams}`)
@@ -111,8 +110,8 @@ const AllUsers = () => {
         });
     };
 
-    const handleSearchNameChange = (e) => {
-        setSearchName(e.target.value);
+    const handleSearchEmailChange = (e) => {
+        setSearchEmail(e.target.value);
     };
 
     const filterUsers = (type) => {
@@ -121,6 +120,16 @@ const AllUsers = () => {
             setAllUsers(true);
         } else {
             setFilteredUsers(users.filter((user) => user.type === type));
+            setAllUsers(false);
+        }
+    };
+
+    const searchUsers = () => {
+        if (searchEmail === '') {
+            setFilteredUsers(users);
+            setAllUsers(true);
+        } else {
+            setFilteredUsers(users.filter((user) => user.email.toLowerCase().includes(searchEmail.toLowerCase())));
             setAllUsers(false);
         }
     };
@@ -136,8 +145,8 @@ const AllUsers = () => {
                         <button onClick={() => filterUsers('admin')} className="font-medium text-gray-800 dark:text-gray-300 bg-gray-100 dark:bg-gray-700 py-1 px-3 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition duration-300">Admins</button>
                     </div>
                     <div className="flex items-center space-x-4">
-                        <input type="text" placeholder="Search by name" className="border-gray-300 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-300 px-3 py-1 rounded-lg" value={searchName} onChange={handleSearchNameChange} />
-                        <button className="bg-blue-500 dark:bg-blue-700 text-white px-3 py-1 rounded-lg" onClick={() => fetchUsers()}>Search</button>
+                        <input type="text" placeholder="Search by email" className="border-gray-300 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-300 px-3 py-1 rounded-lg" value={searchEmail} onChange={handleSearchEmailChange} />
+                        <button className="bg-blue-500 dark:bg-blue-700 text-white px-3 py-1 rounded-lg" onClick={searchUsers}>Search</button>
                     </div>
                 </div>
                 <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">

@@ -9,7 +9,7 @@ const OurMission = () => {
             <div className='grid gap-2'>
                 <div>
                     <h1 className='text-[#065FB1] text-xl font-bold uppercase'>🔹Mission: </h1><br />
-                    <p className='-mt-5 text-black font-light text-lg'>
+                    <p className='-mt-5 text-gray-500  text-lg'>
                         We are a team of passionate developers and designers who are dedicated to creating innovative
                         and user-friendly web applications. Our mission is to provide a seamless and
                         intuitive experience for our users, while also ensuring that our applications are
@@ -18,7 +18,7 @@ const OurMission = () => {
                     </div>
                     <div>
                     <h1 className='text-[#065FB1] text-xl font-bold uppercase'>🔹Vision: </h1><br />
-                    <p className='-mt-5 text-black font-light text-lg'>
+                    <p className='-mt-5 text-gray-500 text-lg'>
                         We are a team of passionate developers and designers who are dedicated to creating innovative
                         and user-friendly web applications. Our mission is to provide a seamless and
                         intuitive experience for our users, while also ensuring that our applications are

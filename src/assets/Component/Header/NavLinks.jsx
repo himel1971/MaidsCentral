@@ -2,8 +2,6 @@ import React, { useContext, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../../Config/AuthProvider";
 
-
-
 const NavLinks = () => {
 
   const { user } = useContext(AuthContext);

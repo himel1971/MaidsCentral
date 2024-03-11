@@ -103,7 +103,7 @@ const router = createBrowserRouter([
         {
           path: "/tips/:id",
           element: <BlogDetails></BlogDetails>,
-          loader: () => fetch('https://maid-central-server-npw1g5hho-kazi-md-khorshed-alams-projects.vercel.app/tips')
+          loader: () => fetch('https://maid-central-server-npw1g5hho-kazi-md-khorshed-alams-projects.vercel.app/blogs')
 
         },
         {

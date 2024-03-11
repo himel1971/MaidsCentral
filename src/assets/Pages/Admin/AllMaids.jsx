@@ -7,8 +7,10 @@ const AllMaids = () => {
   const [users, setUsers] = useState([]);
   const [searchName, setSearchName] = useState('');
 
+  // Function to fetch users based on the search query
   const fetchUsers = async (searchQuery = '') => {
     try {
+      // Form the URL with the search query
       const URL = `https://maid-central-server-npw1g5hho-kazi-md-khorshed-alams-projects.vercel.app/maids?name=${searchQuery}`;
       const response = await fetch(URL);
       const data = await response.json();
@@ -19,10 +21,16 @@ const AllMaids = () => {
     }
   };
 
-  useEffect(() => {
-    fetchUsers();
-  }, []);
+  // Function to handle search query changes
+  const handleSearchNameChange = (e) => {
+    setSearchName(e.target.value);
+    fetchUsers(e.target.value); // Call fetchUsers with the updated search query
+  };
 
+  useEffect(() => {
+    fetchUsers(); // Fetch users initially (when the component mounts)
+  }, []);
+  //handle delete data
   const handleDelete = (_id) => {
     Swal.fire({
       title: "Are you sure?",
@@ -58,19 +66,13 @@ const AllMaids = () => {
   };
 
 
-
-
-  const handleSearchNameChange = (e) => {
-    setSearchName(e.target.value);
-    fetchUsers(e.target.value);
-  };
-
   return (
     <div>
       <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
         <div className="flex justify-between items-center p-5">
           <h1 className="text-lg font-semibold text-black dark:text-white">All Maids</h1>
           <div className="flex items-center space-x-4">
+            {/* Search input */}
             <input
               type="text"
               placeholder="Search by name"
@@ -78,6 +80,7 @@ const AllMaids = () => {
               value={searchName}
               onChange={handleSearchNameChange}
             />
+            {/* Button to manually trigger search */}
             <button
               className="bg-gray-200 text-gray-700 px-3 py-1 rounded-lg"
               onClick={() => fetchUsers(searchName)}
@@ -86,6 +89,7 @@ const AllMaids = () => {
             </button>
           </div>
         </div>
+        {/* Table to display users */}
         <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
           <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
@@ -98,33 +102,27 @@ const AllMaids = () => {
             </tr>
           </thead>
           <tbody>
+            {/* Map through users and display them */}
             {users.map(user => (
               <tr key={user._id} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                 <td className="px-6 py-4 uppercase">{user.type}
-                  <img className="mask mask-square h-9" src={user.picture_url} />
+                  <img className="mask mask-square h-9" src={user.picture_url} alt="Maid image"/>
                 </td>
-                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">{user.name}</th>
-                <td className="px-6 py-4">{user.nationality}</td>
-                <td className="px-6 py-4">{user.Supplier?user.Supplier:<>NaN</> }</td>
-                <td className="px-6 py-4">{user.religion}</td>
+                <th scope="row" className="px-6 py-4 capitalize font-medium text-gray-900 whitespace-nowrap dark:text-white">{user.name}</th>
+                <td className="px-6 py-4 capitalize">{user.nationality}</td>
+                <td className="px-6 py-4 capitalize">{user.Supplier?user.Supplier:<>NaN</> }</td>
+                <td className="px-6 py-4 capitalize">{user.religion}</td>
                 <td className="px-6 py-4 text-right">
-
                   <div className='space-x-2 uppercase'>
                     <Link
                       to={`/dashboard/edit/${user._id}`}
                     >
                       <button
                         className="font-medium text-[#EA580C] dark:text-blue-500 hover:underline"
-
                       >
                         Edit
                       </button>
                     </Link>
-
-
-
-
-
                     <button
                       className="font-medium text-[#EA580C] dark:text-blue-500 hover:underline"
                       onClick={() => handleDelete(user._id)}
@@ -132,7 +130,6 @@ const AllMaids = () => {
                       Delete
                     </button>
                   </div>
-
                 </td>
               </tr>
             ))}

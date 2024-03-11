@@ -132,6 +132,7 @@ const AddMaids = () => {
           responsibilities: experience.responsibilities.toLowerCase(),
         }))
       };
+      console.log(skills);
 
       // Send a POST request to the backend
       const response = await fetch('https://maid-central-server-npw1g5hho-kazi-md-khorshed-alams-projects.vercel.app/maids', {
@@ -146,8 +147,11 @@ const AddMaids = () => {
         // Success
         Swal.fire({
           title: 'Maid added successfully!',
-          text: 'we added on more maid successfully to our server!!',
+          text: 'we added one more maid successfully to our server!!',
           icon: 'success',
+        }).then(() => {
+          // Reload the page after the user acknowledges the success message
+          window.location.reload();
         });
       } else {
         // Error
@@ -187,7 +191,7 @@ const AddMaids = () => {
           <div className="space-y-2 col-span-full lg:col-span-1">
             <p className="font-medium">Add Maid Information</p>
             <p className="text-xs capitalize">
-              fill the form with maid data. please be careful with data . if fill wrong you have delete data or edit some inputs. so Fill right data on first time.
+              fill the form with maid data. please be careful with data . if fill wrong you have delete data or edit some inputs. so Fill correct data on first time.
             </p>
           </div>
           <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
@@ -279,8 +283,27 @@ const AddMaids = () => {
 
             <div className="col-span-full">
               <label className="text-sm">Skills</label> &nbsp;
+              <select
+                value={''}
+                onChange={(e) => {
+                  const newSkill = e.target.value;
+                  setSkills([...skills, newSkill]);
+                }}
+                className="w-full rounded-md focus:ring focus:ri focus:ri border-gray-300 text-gray-900"
+              >
+                <option value="">Select Skill</option>
+                <option value="childcare">Childcare</option>
+                <option value="housework">Housework</option>
+                <option value="elderly care">ElderlyCare</option>
+                <option value="care newborn">NewBorn Care</option>
+                <option value="care for Disable">Care for Disable</option>
+                <option value="Nurse Aid Trained">Nurse Aid Trained</option>
+                <option value="bedridden care">Bedridden care</option>
+              </select>
+            </div>
+            <div className="col-span-full">
               {skills.map((skill, index) => (
-                <div key={index}>
+                <div className='my-4 flex' key={index}>
                   <input
                     type="text"
                     placeholder="Skill"
@@ -290,13 +313,14 @@ const AddMaids = () => {
                       updatedSkills[index] = e.target.value;
                       setSkills(updatedSkills);
                     }}
-                    className="w-full rounded-md focus:ring focus:ri focus:ri border-gray-300 text-gray-900"
+                    className="w-full rounded-md focus:ring focus:ri focus:ri border-gray-300 bg-blue-100 text-gray-900"
                   />
-                  <button type="button" onClick={() => handleRemoveSkill(index)} className="px-4 py-2 border rounded-md border-gray-800">Remove Skill</button>
+                  <button type="button" onClick={() => handleRemoveSkill(index)} className="px-4 font-semibold text-xl rounded-md border-gray-800 text-red-600 -ml-12">X</button>
                 </div>
               ))}
-              <button type="button" onClick={handleAddSkill} className="px-4 py-2 border rounded-md border-gray-800">Add Skill</button>
             </div>
+            {/* <button type="button" onClick={handleAddSkill} className="px-4 py-2 border rounded-md border-gray-800">Add Skill</button> */}
+
 
 
 

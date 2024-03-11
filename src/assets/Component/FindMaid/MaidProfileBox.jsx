@@ -20,10 +20,10 @@ const MaidProfileBox = ({ maid }) => {
                     )}
                     <div className="space-y-4 text-center divide-y divide-gray-300">
                         <div className="my-2 space-y-1">
-                            <h2 className="text-xl font-semibold sm:text-2xl">
+                            <h2 className="text-xl capitalize font-semibold sm:text-2xl">
                                 {name.split(" ").slice(0, 2).join(" ")}
                             </h2>
-                            <p className="px-5 text-xs sm:text-base text-gray-600">{nationality}</p>
+                            <p className="px-5 text-xs sm:text-base capitalize text-gray-600">{nationality}</p>
                         </div>
                         <BoxTableData maid={maid} />
                         {/* Social Links */}

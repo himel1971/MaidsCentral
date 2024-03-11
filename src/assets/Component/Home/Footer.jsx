@@ -47,13 +47,13 @@ const Footer = () => {
               <h3 className="uppercase text-white ">Maids Service</h3>
               <ul className="space-y-1">
                 <li>
-                  <a className='text-[#00ADEE]' href="./Forms/POEA.pdf" download_>
+                  <a className='text-[#00ADEE]' href="./Forms/Form A.pdf" download>
                     ◽  New Maid Arrival Transport & Administration
                   </a>
                 </li>
                 <li>
 
-                  <a className='text-[#00ADEE]' href="./Forms/OWWA.pdf" download_>
+                  <a className='text-[#00ADEE]' href="./Forms/OWWA.pdf" download>
                     ◽ Maid Home Leave Application
                   </a>
                 </li>

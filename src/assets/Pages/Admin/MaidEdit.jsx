@@ -234,6 +234,21 @@ const MaidEdit = () => {
                 <option>Taoism</option>
               </select>
             </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
             <div className="col-span-full sm:col-span-2">
               <label className="text-sm">Rest Day Preference</label>
               <input
