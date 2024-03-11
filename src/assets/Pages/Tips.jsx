@@ -22,11 +22,12 @@ const Tips = () => {
                     <div className="max-w-6xl md:ml-96">
                         <h1 className="mb-12 md:text-7xl text-5xl text-black text-center capitalize">Most helpful Tips</h1>
                         <div className='container mx-auto flex flex-col items-center justify-center justify-items-center gap-6'>
-                            {articles.map((tip) => (
+                            {articles.slice(0, 4).map((tip) => (
                                 <Link key={tip._id} to={`tips/${tip._id}`} className="px-8 py-3 w-72 text-center font-semibold rounded-full bg-white border border-black text-black">
                                     {tip.title}
                                 </Link>
                             ))}
+
                             <div className="space-y-3 mx-auto">
                                 <div className="flex justify-start space-x-3">
                                     <a rel="noopener noreferrer" target='blank' href="https://www.facebook.com/MaidsCentral" title="Facebook" className="flex items-center p-1">

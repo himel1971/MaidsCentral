@@ -55,11 +55,10 @@ const TopStories = () => {
                 <div className=" space-y-6 items-center justify-center p-6 mt-8 lg:mt-0 ">
                     {isLoading ? (
                         <div className='flex  justify-center items-center'>
-
                             <span className="loading loading-ring loading-lg"></span>
                         </div>
                     ) : (
-                        articles.map((article, index) => (
+                        articles.slice(0, 4).map((article, index) => (
                             <HomeBlogBox key={index} index={index} {...article} />
                         ))
                     )}
