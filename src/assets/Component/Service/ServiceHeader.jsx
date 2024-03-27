@@ -9,7 +9,9 @@ const ServiceHeader = () => {
             <div
                 className="relative mx-auto max-w-screen-xl px-4 py-24 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8"
             >
-                <div className="md:-mt-32 md:-ml-28 flex flex-col justify-center items-center space-y-4 text-white  text-center ">
+                <div className="md:-mt-32 md:-ml-28 flex flex-col justify-center items-center space-y-4
+                md:pl-16 
+                 text-white  text-center ">
                     <div className=''>
                         <h1 className="text-3xl text-left font-extrabold sm:text-5xl">
                            Our Service

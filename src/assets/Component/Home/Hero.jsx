@@ -5,7 +5,7 @@ const Hero = () => {
     return (
         <>
             <section
-                className="relative h-[90vh] bg-[url(./images/Home/hero3.png)] bg-cover bg-center bg-no-repeat"
+                className="relative h-[90vh] bg-[url(https://i.ibb.co/7jH01dX/tips-STORIES.png)] bg-cover bg-center bg-no-repeat"
             >
 
                 <div

@@ -42,12 +42,12 @@ const Nav = () => {
 
                         </ul>
                     </div>
-                    <img src="https://i.ibb.co/y8tmLDK/reallogo.jpg" alt="MaidsCentral" className='md:w-72 w-64' border="0"></img>
+                    <img src="https://i.ibb.co/y8tmLDK/reallogo.jpg" alt="MaidsCentral" className='md:w-72 w-64 md:mb-2' border="0"></img>
 
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <div className="text-black text-lg not-italic font-normal z-10">
-                        <ul className="flex text-lg uppercase font-rubik font-medium pb-3 justify-between items-center space-x-11">
+                        <ul className="flex text-lg uppercase font-rubik font-medium lg:pb-3 justify-between items-center md:space-x-8 space-x-11">
                             <NavLinks></NavLinks>
                         </ul>
                     </div>
@@ -66,7 +66,7 @@ const Nav = () => {
 
                     {!user ?
                         <div className='gap-3 flex'>
-                            <NavLink to="/login" className=" hover:text-[#7CC23E] hidden text-lg md:flex  px-9 py-2.5  font-medium text-black uppercase ">Log In</NavLink>
+                            <NavLink to="/login" className=" hover:text-[#7CC23E] hidden text-[0.5rem] lg:text-lg md:flex  px-9 py-2.5  font-medium text-black uppercase ">Log In</NavLink>
 
                             <NavLink to="/register" className="btn rounded-md hover:bg-[#E67700] hidden md:flex  px-8 bg-[#7CC23E] py-2.5 text-sm font-medium text-white shadow">Register</NavLink>
 
