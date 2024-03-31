@@ -9,7 +9,7 @@ const AboutHeader = () => {
             <div
                 className="relative mx-auto max-w-screen-xl px-4 py-24 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8"
             >
-                <div className="md:-mt-32 md:-ml-28 flex flex-col md:pl-16 justify-center items-center space-y-4 text-white  text-center ">
+                <div className="md:-mt-24 lg:-mt-60 lg:-ml-28 flex flex-col lg:pl-24 justify-center items-center space-y-4 text-white  text-center ">
                     <div className=''>
                         <h1 className="text-3xl text-left font-extrabold sm:text-5xl">
                             About Our Agency

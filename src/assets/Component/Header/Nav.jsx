@@ -47,7 +47,7 @@ const Nav = () => {
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <div className="text-black text-lg not-italic font-normal z-10">
-                        <ul className="flex text-lg uppercase font-rubik font-medium lg:pb-3 justify-between items-center md:space-x-8 space-x-11">
+                        <ul className="flex text-lg uppercase font-rubik font-medium  justify-between items-center md:space-x-4 space-x-11">
                             <NavLinks></NavLinks>
                         </ul>
                     </div>
@@ -65,12 +65,12 @@ const Nav = () => {
 
 
                     {!user ?
-                        <div className='gap-3 flex'>
-                            <NavLink to="/login" className=" hover:text-[#7CC23E] hidden text-[0.5rem] lg:text-lg md:flex  px-9 py-2.5  font-medium text-black uppercase ">Log In</NavLink>
+                        <div className='gap-2 flex'>
+    <NavLink to="/login" className="hover:text-[#7CC23E] hidden lg:text-[1rem] md:inline-block md:flex px-6 py-2.5 font-medium text-black uppercase">Log In</NavLink>
 
-                            <NavLink to="/register" className="btn rounded-md hover:bg-[#E67700] hidden md:flex  px-8 bg-[#7CC23E] py-2.5 text-sm font-medium text-white shadow">Register</NavLink>
+    <NavLink to="/register" className="btn rounded-md hover:bg-[#E67700] hidden md:flex px-8 bg-[#7CC23E] py-2.5 text-sm font-medium text-white shadow">Register</NavLink>
+</div>
 
-                        </div>
                         :
                         <>
                             <div className="dropdown dropdown-end">
@@ -92,7 +92,7 @@ const Nav = () => {
                             <a className='hidden lg:block' href="https://wa.me/message/OTPYQ2VQURDEC1" target="_blank">
                                 <button
                                     type="button"
-                                    className="px-5 py-3 font-semibold border rounded border-gray-800 text-[#065FB1] text-lg">
+                                    className="px-5 py-3 font-semibold border rounded border-gray-800 text-[#065FB1] text-lg lg:hidden">
                                     Contact us
                                 </button>
                             </a>
