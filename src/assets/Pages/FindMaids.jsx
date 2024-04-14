@@ -118,7 +118,7 @@ const currentMaids = filteredMaids.slice(indexOfFirstMaid, indexOfLastMaid);
           <h1 className='text-[#065FB1] font-bold uppercase'>Nationality:</h1>
           <FilterButtons options={nationalities} selectedOption={filters.nationality} onSelect={nationality => setFilters({ ...filters, nationality: nationality })} />
         </div>
-
+<hr />
         {/* Skills filter */}
         <div className='flex items-center space-x-5 '>
           <h1 className='text-[#065FB1] font-bold uppercase'>Skill:</h1>

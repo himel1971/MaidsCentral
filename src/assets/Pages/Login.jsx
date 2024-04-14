@@ -73,7 +73,7 @@ const SignIn = () => {
             .then(result => { handleLoginSuccess(); })
             .catch(error => {
                 const errorCode = error.code;
-                const errPass = 'auth/invalid-login-credentials'
+                const errPass = 'auth/invalid-credential'
                 const errMany = 'auth/too-many-requests'
                 {
                     if (errorCode == errPass) {
@@ -102,7 +102,7 @@ const SignIn = () => {
     };
 
     return (
-        <section className="bg-[url(https://i.ibb.co/q0X7k22/login.png)] bg-no-repeat bg-cover py-20 lg:py-[120px] font-rubik">
+        <section className="bg-[url(https://i.ibb.co/q0X7k22/login.png)] bg-no-repeat bg-cover bg-left py-20 lg:py-[120px] font-rubik">
             <div className="container ">
                 <div className="w-full px-4">
                     <div className="relative mx-auto max-w-[525px] overflow-hidden rounded-lg bg-white py-16 px-10 text-center sm:px-12 md:px-[60px]">

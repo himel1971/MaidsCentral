@@ -6,10 +6,10 @@ import Cta from '../Component/Footer/Cta'
 import TopBar from '../Component/Header/TopBar'
 import { RiseLoader } from 'react-spinners'
 import HomeLoader from '../Component/Loader/HomeLoader'
+import NewCta from '../Component/Footer/NewCta'
 
 const Layout = () => {
     const [isLoading, setIsLoading] = useState(true); // Initially, set isLoading to true
-
     const location = useLocation();
 
     useEffect(() => {
@@ -33,7 +33,8 @@ const Layout = () => {
                 <Outlet />
             </div>
             {isLoading && <HomeLoader />} 
-            <Cta></Cta>
+            {/* <Cta></Cta> */}
+            <NewCta></NewCta>
             <Footer></Footer>
         </>
     )

@@ -97,7 +97,7 @@ const NavLinks = () => {
               isPending ? "pending" : isActive ? "text-[#813f20]" : ""
             }
           >
-            Service
+            Services
           </NavLink>
         </li>
         <li>

@@ -5,7 +5,7 @@ const Faq = () => {
         <section className="text-gray-800">
             <div className="container flex flex-col justify-center px-4 py-8 mx-auto md:p-8">
                 <h2 className="text-2xl text-[#065FB1] font-semibold sm:text-4xl">Frequently Asked Questions</h2>
-                <p className="mt-4 mb-8 text-gray-600">Find answers to common queries in our FAQ section!</p>
+                <p className="mt-4 mb-8 text-gray-600">Find answers to common queries in our FAQ section.</p>
                 <div className="space-y-2">
                     <details className="border rounded-lg">
                         <summary className="px-4 py-6 focus:outline-none focus-visible:ring">What are the requirements for hiring a maid in Singapore?</summary>
@@ -89,8 +89,8 @@ const Faq = () => {
                     </details>
                 </div>
 
-                <h2 className="mt-12 text-2xl text-[#065FB1] font-semibold sm:text-4xl">Most Common Issues When Hiring a Maid in Singapore!!</h2>
-                <p className="mt-4 mb-8 text-lg text-black">Below are some of the most common issues employers may encounter when hiring a maid in Singapore:</p>
+                <h2 className="mt-12 text-2xl text-[#065FB1] font-semibold sm:text-4xl">Most Common Issues When Hiring a Maid in Singapore.</h2>
+                <p className="mt-4 mb-8 text-lg text-gray-800">Below are some of the most common issues employers may encounter when hiring a maid in Singapore:</p>
 
                 <ul className="ml-8 text-gray-600 list-disc space-y-2">
                     <li><b>Work Permit Issues:</b> Employers may face challenges related to obtaining or renewing a maid's work permit, including delays or rejections by the Ministry of Manpower (MOM).</li>

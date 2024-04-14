@@ -31,7 +31,7 @@ const TopStories = () => {
             <div className="container flex flex-col justify-center p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-between">
                 <div className="flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-xl lg:text-left">
                     <div className="space-y-6 my-8">
-                        <h1 className="text-4xl font-rubik font-medium text-white uppercase sm:text-6xl">
+                        <h1 className="text-4xl font-rubik font-medium text-white uppercase sm:text-center md:text-left sm:text-6xl">
                             top stories of&nbsp;
                             <span className="text-[#C1FF72]">employers</span>
                             &nbsp;& their&nbsp;
@@ -40,7 +40,7 @@ const TopStories = () => {
                     </div>
                     <div className="space-y-6 my-8">
                         <h1 className="text-lg font-rubik font-medium text-white uppercase sm:text-6xl">
-                            are you facing these issues now ?
+                            are you facing these issues now?
                         </h1>
                     </div>
                     <div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">

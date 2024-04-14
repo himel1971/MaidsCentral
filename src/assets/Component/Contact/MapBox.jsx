@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Map, Marker } from "pigeon-maps"
 
 import LocationList from "./LocationList";
+import Location from "./Location";
 
 const MapBox = () => {
   const [hue, setHue] = useState(0)
@@ -37,7 +38,7 @@ const MapBox = () => {
 
 
 
-            <LocationList></LocationList>
+            {/* <LocationList></LocationList> */}
           </div>
 
 
@@ -46,17 +47,15 @@ const MapBox = () => {
 
           <div className=" mt-24 space-y-10">
 
-
-            <h1 className="text-4xl font-semibold uppercase text-[#065FB1] ">Find us On Map</h1>
-
-
-
+            {/* <h1 className="text-4xl font-semibold uppercase text-[#065FB1] ">Find us On Map</h1> */}
             {/* 1st location  */}
 
-            <div>
-              <h1 className="text-xl font-medium uppercase text-slate-700 mb-2 ">BUKIT TIMAH</h1>
+            <div className="grid grid-cols-1 lg:grid-cols-2 container mx-auto shadow-2xl">
 
-
+              <div className="mx-auto flex items-center justify-center align-middle p-4">
+              <Location branch="BUKIT TIMAH" location="Bt Timah Shopping Centre 170 Upper Bt Timah Rd #02-58 Singapore,588179." number="6980 6310" />
+              </div>
+              <div className="p-2">
               <Map height={300} defaultCenter={[1.343070, 103.776090]} defaultZoom={16}>
                 <Marker
                   width={50}
@@ -79,15 +78,17 @@ const MapBox = () => {
 
                   {/* <img src="../../../../public/images/icons/icon-phone.svg" alt="" /> */}
                 </Marker>
-              </Map>
+              </Map></div>
             </div>
 
             {/* 2nd location  */}
 
-            <div>
-              <h1 className="text-xl font-medium uppercase text-slate-700 mb-2 ">THOMSON</h1>
+            <div className="grid grid-cols-1 lg:grid-cols-2 container mx-auto shadow-2xl">
 
-
+              <div className="mx-auto flex items-center justify-center align-middle p-4">
+              <Location branch="GEYLANG" location="55 Changi Road #01-19 Singapore,419709." number="6242 4688" />
+</div>
+<div className="p-2">
               <Map height={300} defaultCenter={[1.351980, 103.836000]} defaultZoom={16}>
                 <Marker
                   width={50}
@@ -110,16 +111,18 @@ const MapBox = () => {
 
                   {/* <img src="../../../../public/images/icons/icon-phone.svg" alt="" /> */}
                 </Marker>
-              </Map>
+              </Map></div>
             </div>
             {/* 3rd location  */}
 
 
 
-            <div>
-              <h1 className="text-xl font-medium uppercase text-slate-700 mb-2 ">GEYLANG</h1>
+            <div className="grid grid-cols-1 lg:grid-cols-2 container mx-auto shadow-2xl">
 
-
+              <div className="mx-auto flex items-center justify-center align-middle p-4">
+              <Location branch="THOMSON" location="200 Upper Thomson Road #B1-02 Singapore,574424." number="6250 5070" />
+              </div>
+              <div className="p-2">
               <Map height={300} defaultCenter={[1.316870, 103.899130]} defaultZoom={16}>
                 <Marker
                   width={50}
@@ -143,16 +146,8 @@ const MapBox = () => {
                   {/* <img src="../../../../public/images/icons/icon-phone.svg" alt="" /> */}
                 </Marker>
               </Map>
+              </div>
             </div>
-
-
-
-
-
-
-
-
-
 
           </div>
 

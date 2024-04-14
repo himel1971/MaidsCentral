@@ -6,7 +6,7 @@ const SingleBlog = ({ blog }) => {
     const { title, content, _id, featured_image_url } = blog;
     return (
         <Link to={`blog/${_id}`}>
-            <article className="flex flex-col bg-gray-50 h-full">
+            <article className="flex flex-col bg-gray-100 rounded-md border-gray-100 border h-full">
                 <img alt="" className="object-cover w-full h-52 bg-gray-500" src={featured_image_url} />
                 <div className="flex flex-col flex-1 p-6">
                     <h1 rel="noopener noreferrer" href="#" className="text-xs  uppercase hover:underline text-[#065FB1]">MaidsCentral</h1>

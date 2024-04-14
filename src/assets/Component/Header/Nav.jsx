@@ -39,11 +39,11 @@ const Nav = () => {
                             <NavLinks />
                         </ul>
                     </div>
-                    <img src="https://i.ibb.co/y8tmLDK/reallogo.jpg" alt="MaidsCentral" className="md:w-52 w-64 md:mb-2" border="0" />
+                    <img src="https://i.ibb.co/y8tmLDK/reallogo.jpg" alt="MaidsCentral" className="md:w-52 w-64 pb-1 xl:w-72  md:mb-2" border="0" />
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <div className="text-black text-lg not-italic font-normal z-10">
-                        <ul className="flex text-lg uppercase font-rubik font-medium justify-between items-center md:space-x-4 space-x-11">
+                        <ul className="flex text-lg uppercase font-rubik font-medium justify-between items-center md:space-x-4 xl:space-x-8 space-x-11">
                             <NavLinks />
                         </ul>
                     </div>

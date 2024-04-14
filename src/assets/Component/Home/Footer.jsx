@@ -6,7 +6,7 @@ const Footer = () => {
 
       <footer className="px-4 divide-y bg-black font-rubik text-white">
         <div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
-          <div className="lg:w-1/3">
+          <div className="lg:w-[20%]">
             {/* LOGO  */}
             <a rel=" " href="#" className="flex justify-center space-x-3 lg:justify-start">
 
@@ -44,21 +44,21 @@ const Footer = () => {
 
 
             <div className="space-y-3">
-              <h3 className="uppercase text-white ">Maids Service</h3>
+              <h3 className="uppercase text-white ">Maids Services</h3>
               <ul className="space-y-1">
                 <li>
-                  <a className='text-[#00ADEE]' href="./Forms/Form A.pdf" download>
+                  <a className='text-white' href="./Forms/Form A.pdf" download>
                     ◽  New Maid Arrival Transport & Administration
                   </a>
                 </li>
                 <li>
 
-                  <a className='text-[#00ADEE]' href="./Forms/OWWA.pdf" download>
+                  <a className='text-white' href="./Forms/OWWA.pdf" download>
                     ◽ Maid Home Leave Application
                   </a>
                 </li>
                 <li>
-                  <a className='text-[#00ADEE]' >
+                  <a className='text-white' >
                     ◽ Maid Passport Renewal
                   </a>
 
@@ -92,7 +92,7 @@ const Footer = () => {
             
 
             <div className="space-y-3">
-              <div className="uppercase text-gray-900">Social media</div>
+              <div className="uppercase text-white">Social media</div>
               <div className="flex justify-start space-x-3">
                 <a rel="noopener noreferrer" href="https://www.facebook.com/MaidsCentral" title="Facebook" className="flex items-center p-1">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 32 32" className="w-5 h-5 fill-current">

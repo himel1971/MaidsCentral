@@ -32,7 +32,7 @@ const WhyUs = () => {
                                     </div>
                                 </div>
                                 <div className="ml-4">
-                                    <h4 className="text-lg font-medium leadi text-gray-900">
+                                    <h4 className="text-lg font-medium leading-3 text-gray-900">
                                         Fast Response Time:
                                     </h4>
                                     <p className="mt-2 text-gray-600">We understand the urgency of your needs. When you submit a maid recruitment request, you'll receive a timely response from one of our housemaid recruitment team members.</p>
@@ -47,7 +47,7 @@ const WhyUs = () => {
                                     </div>
                                 </div>
                                 <div className="ml-4">
-                                    <h4 className="text-lg font-medium leadi text-gray-900">Quality Service:</h4>
+                                    <h4 className="text-lg font-medium leading-3 text-gray-900">Quality Service:</h4>
                                     <p className="mt-2 text-gray-600"> Our experienced team is committed to providing excellent service and skillful knowledge to match you with a helper who best fits your needs.</p>
                                 </div>
                             </div>
@@ -60,14 +60,14 @@ const WhyUs = () => {
                                     </div>
                                 </div>
                                 <div className="ml-4">
-                                    <h4 className="text-lg font-medium leadi text-gray-900">Trusted Assistance: </h4>
+                                    <h4 className="text-lg font-medium leading-3 text-gray-900">Trusted Assistance: </h4>
                                     <p className="mt-2 text-gray-600">We focus on building long-term and healthy working relationships between employers and helpers, ensuring a positive experience for everyone.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div aria-hidden="true" className="mt-10 lg:mt-0">
-                        <img src="/images/Aboutus/wave.jpg" alt="" className="mx-auto rounded-lg shadow-lg bg-gray-500" />
+                        <img src="https://i.ibb.co/hd0NKr8/promo.jpg" alt="" className="mx-auto rounded-lg shadow-lg bg-gray-500" />
                     </div>
                 </div>
             </div>

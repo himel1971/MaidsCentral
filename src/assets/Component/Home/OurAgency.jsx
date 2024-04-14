@@ -36,8 +36,8 @@ const OurAgency = () => {
           <h2 className="text-5xl font-semibold mb-4 uppercase tracking-wider">
             Ethical Agency
           </h2>
-          <p className="text-white text-lg font-medium mb-6">
-            We Will Listen to Your Needs!!
+          <p className="text-white text-lg font-medium mb-6 ">
+            We will listen to your needs!!
           </p>
           <div className="flex flex-wrap gap-2 mt-8">
             <select
